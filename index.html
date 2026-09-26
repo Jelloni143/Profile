@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>गोपाल रेगर — सरपंच पद के उम्मीदवार | ग्राम पंचायत नयागांव</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#1B4D3E;
+    --green-deep-dark:#0F332A;
+    --cream:#FAF3E0;
+    --cream-soft:#F3EAD2;
+    --white:#FFFFFF;
+    --red-warm:#B23A2E;
+    --gold:#C9973B;
+    --ink:#22291F;
+    --ink-soft:#5B6459;
+    --shadow-soft: 0 10px 30px rgba(15,51,42,0.12);
+    --radius-lg: 22px;
+    --radius-md: 14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px; /* space for mobile bottom nav */
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2','Noto Sans Devanagari',sans-serif;
+    margin:0;
+  }
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+  img{max-width:100%;display:block;}
+
+  /* ---------- Village motif divider ---------- */
+  .motif-divider{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    margin:6px 0 28px;color:var(--gold);
+  }
+  .motif-divider span{width:34px;height:2px;background:var(--gold);opacity:.6;display:block;}
+  .motif-divider svg{width:20px;height:20px;}
+
+  /* ---------- Welcome overlay ---------- */
+  #welcome-overlay{
+    position:fixed;inset:0;z-index:999;
+    background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-deep-dark) 100%);
+    display:flex;align-items:center;justify-content:center;
+    padding:24px;
+  }
+  .welcome-card{
+    background:var(--cream);
+    border-radius:var(--radius-lg);
+    padding:36px 28px;
+    max-width:440px;width:100%;
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+    text-align:center;
+    animation:riseIn .6s ease both;
+  }
+  @keyframes riseIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  .welcome-card h1{font-size:2rem;color:var(--green-deep-dark);}
+  .welcome-card p.sub{color:var(--ink-soft);margin-top:8px;font-size:1.05rem;}
+  .welcome-step{display:none;}
+  .welcome-step.active{display:block;animation:fadeIn .4s ease both;}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+  .name-input{
+    width:100%;margin-top:22px;padding:14px 16px;border-radius:12px;
+    border:2px solid #DDD0AC;font-size:1.05rem;background:var(--white);
+    font-family:inherit;color:var(--ink);
+  }
+  .name-input:focus{outline:none;border-color:var(--gold);}
+  .btn-primary{
+    margin-top:20px;width:100%;padding:14px;border:none;border-radius:12px;
+    background:var(--red-warm);color:var(--white);font-size:1.05rem;font-weight:600;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn-primary:hover{background:#9A2F25;transform:translateY(-1px);}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+  .village-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;}
+  .village-pick{
+    background:var(--white);border:2px solid #E7DBB8;border-radius:14px;
+    padding:18px 10px;font-size:1.05rem;font-weight:600;color:var(--green-deep-dark);
+    transition:all .18s ease;
+  }
+  .village-pick:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-soft);}
+  .village-pick.full-span{grid-column:1 / -1;}
+  .welcome-greet-icon{
+    width:64px;height:64px;border-radius:50%;background:var(--green-deep);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+    color:var(--gold);font-size:1.8rem;font-family:'Baloo 2';
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,243,224,0.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid #E7DBB8;
+  }
+  .header-inner{
+    max-width:1180px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:40px;height:40px;border-radius:10px;background:var(--green-deep);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Baloo 2';font-weight:700;font-size:1.1rem;
+  }
+  .brand-text{font-family:'Baloo 2';font-weight:700;font-size:1.15rem;color:var(--green-deep-dark);}
+  nav.desktop-nav{display:flex;gap:28px;}
+  nav.desktop-nav a{font-weight:600;color:var(--ink-soft);font-size:.98rem;position:relative;padding:4px 0;}
+  nav.desktop-nav a:hover{color:var(--green-deep-dark);}
+  nav.desktop-nav a::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);
+    transform:scaleX(0);transition:transform .2s ease;
+  }
+  nav.desktop-nav a:hover::after{transform:scaleX(1);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    max-width:1180px;margin:0 auto;padding:36px 20px 10px;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;
+  }
+  .hero-photo-wrap{
+    border-radius:26px;overflow:hidden;box-shadow:var(--shadow-soft);
+    border:6px solid var(--white);
+    position:relative;
+  }
+  .hero-photo-wrap img{width:100%;height:auto;}
+  .hero-content .eyebrow{
+    color:var(--red-warm);font-weight:700;letter-spacing:.02em;font-size:.98rem;
+  }
+  .hero-content h1{font-size:clamp(2.2rem,5vw,3.4rem);color:var(--green-deep-dark);line-height:1.1;margin-top:6px;}
+  .hero-content .position-badge{
+    display:inline-block;margin-top:14px;background:var(--green-deep);color:var(--white);
+    padding:9px 18px;border-radius:30px;font-weight:600;font-size:1rem;
+  }
+  .hero-content .panchayat-line{margin-top:12px;color:var(--ink-soft);font-size:1.08rem;}
+  .area-card{
+    margin-top:22px;background:var(--white);border-radius:16px;padding:16px 18px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    box-shadow:var(--shadow-soft);border:1px solid #EFE4C4;
+  }
+  .area-card .label{font-size:.85rem;color:var(--ink-soft);}
+  .area-card .value{font-family:'Baloo 2';font-weight:700;color:var(--green-deep-dark);font-size:1.15rem;margin-top:2px;}
+  .change-village-btn{
+    background:var(--cream-soft);border:1px solid var(--gold);color:var(--green-deep-dark);
+    padding:9px 16px;border-radius:30px;font-weight:600;font-size:.92rem;white-space:nowrap;
+    transition:background .2s ease;
+  }
+  .change-village-btn:hover{background:var(--gold);color:var(--white);}
+
+  /* ---------- Sections generic ---------- */
+  section.block{max-width:1180px;margin:0 auto;padding:56px 20px;}
+  .section-head{max-width:640px;margin:0 auto 30px;text-align:center;}
+  .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--green-deep-dark);}
+  .section-head p{color:var(--ink-soft);margin-top:10px;font-size:1.02rem;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .glass-card{
+    background:rgba(255,255,255,0.72);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.6);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-soft);
+    padding:28px;
+  }
+
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .info-card{
+    background:var(--white);border-radius:var(--radius-md);padding:22px;
+    border:1px solid #EFE4C4;box-shadow:0 6px 18px rgba(15,51,42,.06);
+  }
+  .info-card h3{color:var(--green-deep-dark);font-size:1.15rem;margin-bottom:8px;}
+  .info-card p{color:var(--ink-soft);line-height:1.6;margin:0;}
+  .placeholder-text{color:#9A9484;font-style:italic;}
+
+  .village-strip{
+    display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;
+    scrollbar-width:thin;
+  }
+  .village-chip{
+    flex:0 0 auto;background:var(--white);border:1.5px solid #EFE4C4;border-radius:30px;
+    padding:10px 20px;font-weight:600;color:var(--ink-soft);font-size:.95rem;white-space:nowrap;
+    transition:all .18s ease;
+  }
+  .village-chip.active{background:var(--green-deep);border-color:var(--green-deep);color:var(--white);}
+  .village-chip:hover{border-color:var(--gold);}
+
+  .facility-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .facility-card{
+    background:var(--white);border-radius:var(--radius-md);padding:20px;text-align:center;
+    border:1px solid #EFE4C4;
+  }
+  .facility-card .ic{
+    width:46px;height:46px;border-radius:50%;background:var(--cream-soft);color:var(--red-warm);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 10px;
+  }
+  .facility-card h4{font-size:1rem;color:var(--green-deep-dark);margin-bottom:6px;}
+  .facility-card p{font-size:.9rem;color:var(--ink-soft);margin:0;}
+
+  /* ---------- Profile panel ---------- */
+  .profile-panel{
+    max-width:1180px;margin:0 auto;padding:0 20px 10px;
+  }
+  .profile-panel .glass-card{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+  .profile-left{display:flex;align-items:center;gap:12px;}
+  .profile-avatar{
+    width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--white);
+    display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-weight:700;
+  }
+  .profile-name{font-weight:700;color:var(--green-deep-dark);}
+  .profile-village{font-size:.88rem;color:var(--ink-soft);}
+  .badal-btn{
+    background:none;border:1.5px solid var(--red-warm);color:var(--red-warm);
+    padding:7px 16px;border-radius:30px;font-weight:600;font-size:.88rem;
+  }
+  .badal-btn:hover{background:var(--red-warm);color:var(--white);}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .contact-card{
+    background:var(--white);border-radius:var(--radius-md);padding:22px;text-align:center;
+    border:1px solid #EFE4C4;
+  }
+  .contact-card .ic{color:var(--green-deep);margin-bottom:10px;}
+  .contact-card a{color:var(--green-deep-dark);font-weight:600;word-break:break-word;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--green-deep-dark);color:var(--cream);padding:34px 20px 20px;text-align:center;
+  }
+  footer .foot-title{font-family:'Baloo 2';font-size:1.2rem;color:var(--gold);}
+  footer .foot-sub{margin-top:4px;color:#CFE0D6;font-size:.95rem;}
+  footer .foot-note{margin-top:18px;font-size:.78rem;color:#8FA79B;}
+
+  /* ---------- Bottom mobile nav ---------- */
+  .bottom-nav{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--white);border-top:1px solid #E7DBB8;
+    padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+    justify-content:space-around;box-shadow:0 -6px 18px rgba(0,0,0,.06);
+  }
+  .bottom-nav a{
+    display:flex;flex-direction:column;align-items:center;gap:3px;
+    font-size:.72rem;color:var(--ink-soft);font-weight:600;padding:4px 6px;
+  }
+  .bottom-nav a.active-link,.bottom-nav a:active{color:var(--red-warm);}
+
+  /* ---------- Village switcher modal ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(15,51,42,0.55);z-index:900;
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-card{
+    background:var(--cream);border-radius:var(--radius-lg);padding:28px;max-width:440px;width:100%;
+    animation:riseIn .35s ease both;
+  }
+  .modal-card h3{color:var(--green-deep-dark);font-size:1.3rem;margin-bottom:4px;}
+  .modal-close{
+    margin-top:16px;width:100%;padding:12px;border:none;border-radius:12px;
+    background:var(--cream-soft);color:var(--ink-soft);font-weight:600;
+  }
+
+  /* ---------- Admin ---------- */
+  #admin-screen{display:none;min-height:100vh;background:var(--green-deep-dark);padding:30px 16px;}
+  #admin-screen.open{display:block;}
+  .admin-wrap{max-width:900px;margin:0 auto;}
+  .admin-login-card{
+    max-width:400px;margin:60px auto;background:var(--cream);border-radius:var(--radius-lg);
+    padding:30px;box-shadow:0 20px 50px rgba(0,0,0,.4);
+  }
+  .admin-login-card h2{color:var(--green-deep-dark);margin-bottom:6px;}
+  .admin-field{margin-top:14px;}
+  .admin-field label{font-size:.85rem;color:var(--ink-soft);display:block;margin-bottom:5px;}
+  .admin-field input,.admin-field textarea{
+    width:100%;padding:11px 13px;border-radius:10px;border:1.5px solid #DDD0AC;
+    font-family:inherit;font-size:.95rem;background:var(--white);
+  }
+  .admin-error{color:var(--red-warm);font-size:.85rem;margin-top:10px;}
+  .admin-dash{background:var(--cream);border-radius:var(--radius-lg);padding:26px;margin-top:0;}
+  .admin-topbar{display:flex;justify-content:space-between;align-items:center;color:var(--cream);margin-bottom:18px;}
+  .admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+  .admin-tab{
+    background:var(--white);border:1px solid #EFE4C4;padding:9px 16px;border-radius:30px;
+    font-size:.88rem;font-weight:600;color:var(--ink-soft);
+  }
+  .admin-tab.active{background:var(--green-deep);color:var(--white);border-color:var(--green-deep);}
+  .admin-panel-section{display:none;}
+  .admin-panel-section.active{display:block;}
+  .admin-save-btn{
+    margin-top:16px;background:var(--green-deep);color:var(--white);border:none;padding:11px 22px;
+    border-radius:10px;font-weight:600;
+  }
+  .admin-save-btn:hover{background:var(--green-deep-dark);}
+  .admin-status{margin-top:10px;font-size:.85rem;color:var(--green-deep-dark);}
+  .admin-logout{background:none;border:1px solid var(--cream);color:var(--cream);padding:7px 14px;border-radius:20px;font-size:.82rem;}
+  table.admin-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.9rem;}
+  table.admin-table th,table.admin-table td{text-align:right;padding:10px;border-bottom:1px solid #EFE4C4;}
+  table.admin-table th{color:var(--ink-soft);font-weight:600;}
+  .village-edit-block{border:1px solid #EFE4C4;border-radius:12px;padding:16px;margin-bottom:14px;background:var(--white);}
+  .village-edit-block h4{color:var(--green-deep-dark);margin-bottom:10px;}
+  .thumb-preview{width:70px;height:70px;border-radius:12px;object-fit:cover;margin-top:8px;border:1px solid #EFE4C4;}
+
+  @media (max-width:860px){
+    nav.desktop-nav{display:none;}
+    .bottom-nav{display:flex;}
+    .hero{grid-template-columns:1fr;}
+    .intro-grid{grid-template-columns:1fr;}
+    .facility-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .village-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ WELCOME OVERLAY ============ -->
+<div id="welcome-overlay">
+  <div class="welcome-card">
+    <!-- Step 1: name -->
+    <div class="welcome-step active" id="step-name">
+      <h1>स्वागत है</h1>
+      <p class="sub">आपका नाम क्या है?</p>
+      <input type="text" id="visitor-name-input" class="name-input" placeholder="अपना नाम लिखें" />
+      <button class="btn-primary" id="name-next-btn" disabled>आगे बढ़ें</button>
+    </div>
+    <!-- Step 2: village -->
+    <div class="welcome-step" id="step-village">
+      <h1 style="font-size:1.5rem;">आप किस गाँव से हैं?</h1>
+      <div class="village-grid" id="village-grid-welcome"></div>
+    </div>
+    <!-- Step 3: greeting -->
+    <div class="welcome-step" id="step-greet">
+      <div class="welcome-greet-icon">🙏</div>
+      <h1 id="greet-name" style="font-size:1.5rem;">नमस्कार जी</h1>
+      <p class="sub" id="greet-village">आपने चुना है।</p>
+      <button class="btn-primary" id="enter-site-btn">वेबसाइट खोलें</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VILLAGE SWITCH MODAL ============ -->
+<div class="modal-overlay" id="village-modal">
+  <div class="modal-card">
+    <h3>गाँव बदलें</h3>
+    <p style="color:var(--ink-soft);font-size:.92rem;">अपना क्षेत्र चुनें</p>
+    <div class="village-grid" id="village-grid-modal"></div>
+    <button class="modal-close" id="village-modal-close">रद्द करें</button>
+  </div>
+</div>
+
+<!-- ============ MAIN SITE ============ -->
+<div id="main-site" style="display:none;">
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark">न</div>
+        <div class="brand-text">नयागांव</div>
+      </div>
+      <nav class="desktop-nav">
+        <a href="#home">होम</a>
+        <a href="#candidate">उम्मीदवार</a>
+        <a href="#village">गाँव</a>
+        <a href="#info">जानकारी</a>
+        <a href="#contact">संपर्क</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Visitor profile strip -->
+  <div class="profile-panel">
+    <div class="glass-card" style="margin-top:16px;padding:14px 20px;">
+      <div class="profile-left">
+        <div class="profile-avatar" id="avatar-letter">आ</div>
+        <div>
+          <div class="profile-name"><span id="profile-name-text">आगंतुक</span> जी</div>
+          <div class="profile-village">गाँव: <span id="profile-village-text">—</span></div>
+        </div>
+      </div>
+      <button class="badal-btn" id="badal-btn">बदलें</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-photo-wrap">
+      <img id="candidate-photo" src="candidate-poster.png" alt="गोपाल रेगर — सरपंच पद के उम्मीदवार" />
+    </div>
+    <div class="hero-content">
+      <div class="eyebrow">ग्राम पंचायत नयागांव</div>
+      <h1 id="candidate-name-hero">गोपाल रेगर</h1>
+      <div class="position-badge" id="candidate-position-hero">सरपंच पद के उम्मीदवार</div>
+      <p class="panchayat-line">ग्राम पंचायत नयागांव · देवली, टोंक, राजस्थान</p>
+      <div class="area-card">
+        <div>
+          <div class="label">आपका क्षेत्र</div>
+          <div class="value" id="hero-selected-village">नयागांव</div>
+        </div>
+        <button class="change-village-btn" id="change-village-btn-hero">गाँव बदलें</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANDIDATE INTRO -->
+  <section class="block reveal" id="candidate">
+    <div class="section-head">
+      <h2>उम्मीदवार परिचय</h2>
+      <div class="motif-divider"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg><span></span></div>
+    </div>
+    <div class="intro-grid">
+      <div class="info-card">
+        <h3>गोपाल रेगर</h3>
+        <p>सरपंच पद के उम्मीदवार, ग्राम पंचायत नयागांव।</p>
+      </div>
+      <div class="info-card">
+        <h3>ग्राम पंचायत परिचय</h3>
+        <p id="panchayat-intro-text" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VILLAGE SELECTOR STRIP -->
+  <section class="block reveal" id="village" style="padding-top:0;">
+    <div class="section-head">
+      <h2>चुना हुआ गाँव</h2>
+      <p>नीचे दिए गए गाँवों में से किसी को भी चुनकर जानकारी देखें</p>
+    </div>
+    <div class="village-strip" id="village-strip"></div>
+  </section>
+
+  <!-- VILLAGE INFO -->
+  <section class="block reveal" id="info">
+    <div class="section-head">
+      <h2 id="village-info-heading">नयागांव के लिए जानकारी</h2>
+      <div class="motif-divider"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3l-6.3 4.4 2.3-7.1-6-4.4h7.6z"/></svg><span></span></div>
+    </div>
+    <div class="glass-card">
+      <p id="village-info-text" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p>
+    </div>
+  </section>
+
+  <!-- NAGARIK SUVIDHAYEN -->
+  <section class="block reveal">
+    <div class="section-head">
+      <h2>नागरिक सुविधाएँ</h2>
+    </div>
+    <div class="facility-grid" id="facility-grid">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <!-- IMPORTANT INFO -->
+  <section class="block reveal">
+    <div class="section-head">
+      <h2>महत्वपूर्ण जानकारी</h2>
+    </div>
+    <div class="glass-card">
+      <p id="important-info-text" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block reveal" id="contact">
+    <div class="section-head">
+      <h2>संपर्क जानकारी</h2>
+    </div>
+    <div class="contact-grid" id="contact-grid">
+      <div class="contact-card">
+        <div class="ic">📞</div>
+        <div id="contact-phone" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</div>
+      </div>
+      <div class="contact-card">
+        <div class="ic">📷</div>
+        <div id="contact-insta" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</div>
+      </div>
+      <div class="contact-card">
+        <div class="ic">📘</div>
+        <div id="contact-fb" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-title">ग्राम पंचायत नयागांव</div>
+    <div class="foot-sub">देवली, टोंक, राजस्थान</div>
+    <div class="foot-note">यह एक सूचनात्मक वेबसाइट है।</div>
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="#home">होम</a>
+    <a href="#candidate">उम्मीदवार</a>
+    <a href="#village">गाँव</a>
+    <a href="#info">जानकारी</a>
+    <a href="#contact">संपर्क</a>
+  </nav>
+</div>
+
+<!-- ============ ADMIN SCREEN ============ -->
+<div id="admin-screen">
+  <div class="admin-wrap">
+    <div class="admin-login-card" id="admin-login-card">
+      <h2>एडमिन लॉगिन</h2>
+      <p style="color:var(--ink-soft);font-size:.9rem;">यह पैनल केवल अधिकृत उपयोगकर्ता के लिए है।</p>
+      <div class="admin-field">
+        <label>ईमेल</label>
+        <input type="email" id="admin-email" autocomplete="username" />
+      </div>
+      <div class="admin-field">
+        <label>पासवर्ड</label>
+        <input type="password" id="admin-password" autocomplete="current-password" />
+      </div>
+      <button class="btn-primary" id="admin-login-btn" style="background:var(--green-deep);">लॉगिन करें</button>
+      <div class="admin-error" id="admin-login-error"></div>
+    </div>
+
+    <div class="admin-dash" id="admin-dash" style="display:none;">
+      <div class="admin-topbar">
+        <div class="brand-text" style="color:var(--gold);">एडमिन पैनल — नयागांव</div>
+        <button class="admin-logout" id="admin-logout-btn">लॉगआउट</button>
+      </div>
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="tab-candidate">उम्मीदवार</button>
+        <button class="admin-tab" data-tab="tab-contact">संपर्क</button>
+        <button class="admin-tab" data-tab="tab-villages">गाँव जानकारी</button>
+        <button class="admin-tab" data-tab="tab-visitors">आगंतुक सूची</button>
+      </div>
+
+      <!-- Candidate tab -->
+      <div class="admin-panel-section active" id="tab-candidate">
+        <div class="admin-field"><label>उम्मीदवार का नाम</label><input id="f-cand-name" /></div>
+        <div class="admin-field"><label>पद</label><input id="f-cand-position" /></div>
+        <div class="admin-field"><label>उम्मीदवार फोटो अपलोड करें</label><input type="file" id="f-cand-photo" accept="image/*" /><img id="f-cand-photo-preview" class="thumb-preview" style="display:none;"></div>
+        <div class="admin-field"><label>चुनाव चिन्ह का नाम (यदि निर्वाचन आयोग द्वारा आवंटित हो)</label><input id="f-symbol-name" placeholder="केवल वास्तविक जानकारी भरें" /></div>
+        <div class="admin-field"><label>चुनाव चिन्ह फोटो अपलोड करें</label><input type="file" id="f-symbol-photo" accept="image/*" /><img id="f-symbol-photo-preview" class="thumb-preview" style="display:none;"></div>
+        <div class="admin-field"><label>ग्राम पंचायत परिचय</label><textarea id="f-panchayat-intro" rows="3"></textarea></div>
+        <div class="admin-field"><label>महत्वपूर्ण जानकारी</label><textarea id="f-important-info" rows="3"></textarea></div>
+        <button class="admin-save-btn" id="save-candidate-btn">सहेजें</button>
+        <div class="admin-status" id="candidate-save-status"></div>
+      </div>
+
+      <!-- Contact tab -->
+      <div class="admin-panel-section" id="tab-contact">
+        <div class="admin-field"><label>फोन नंबर</label><input id="f-phone" placeholder="केवल वास्तविक नंबर भरें" /></div>
+        <div class="admin-field"><label>Instagram लिंक</label><input id="f-insta" placeholder="https://instagram.com/..." /></div>
+        <div class="admin-field"><label>Facebook लिंक</label><input id="f-fb" placeholder="https://facebook.com/..." /></div>
+        <button class="admin-save-btn" id="save-contact-btn">सहेजें</button>
+        <div class="admin-status" id="contact-save-status"></div>
+      </div>
+
+      <!-- Villages tab -->
+      <div class="admin-panel-section" id="tab-villages">
+        <div id="village-edit-list"></div>
+        <button class="admin-save-btn" id="save-villages-btn">सभी गाँव सहेजें</button>
+        <div class="admin-status" id="villages-save-status"></div>
+      </div>
+
+      <!-- Visitors tab -->
+      <div class="admin-panel-section" id="tab-visitors">
+        <p style="color:var(--ink-soft);font-size:.9rem;">वेबसाइट पर आए आगंतुकों की सूची (नाम, गाँव, समय)</p>
+        <table class="admin-table">
+          <thead><tr><th>नाम</th><th>गाँव</th><th>समय</th></tr></thead>
+          <tbody id="visitors-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import {
+  getFirestore, doc, getDoc, setDoc, collection, addDoc,
+  serverTimestamp, onSnapshot, query, orderBy, limit
+} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import {
+  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
+} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import {
+  getStorage, ref, uploadBytes, getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
+
+// ---------- Firebase config (as provided by site owner) ----------
+const firebaseConfig = {
+  apiKey: "AIzaSyCca_cvShk_9NUwq2pbSfomlxoxt279BSU",
+  authDomain: "friend-group-ca43a.firebaseapp.com",
+  databaseURL: "https://friend-group-ca43a-default-rtdb.firebaseio.com",
+  projectId: "friend-group-ca43a",
+  storageBucket: "friend-group-ca43a.firebasestorage.app",
+  messagingSenderId: "873156765363",
+  appId: "1:873156765363:web:f3f11528beedbc6fd472c6",
+  measurementId: "G-R7M1YH2SLZ"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+const storage = getStorage(app);
+
+// ---------- Village list (fixed, as given in the brief) ----------
+const VILLAGES = ["नयागांव", "बिशनपुरा", "कल्याणपुरा", "बेनपा", "गोपालपुरा"];
+
+// ---------- Site content document (public read, admin write) ----------
+const siteDocRef = doc(db, "site", "content");
+let siteData = {
+  candidateName: "गोपाल रेगर",
+  candidatePosition: "सरपंच पद के उम्मीदवार",
+  candidatePhotoUrl: "",
+  symbolName: "",
+  symbolPhotoUrl: "",
+  panchayatIntro: "",
+  importantInfo: "",
+  phone: "",
+  insta: "",
+  fb: "",
+  villages: {} // { villageName: { info: "", facilities: "" } }
+};
+
+function placeholderIfEmpty(val){
+  return (val && val.trim().length) ? val : null;
+}
+
+function renderPublicContent(){
+  if(placeholderIfEmpty(siteData.candidateName)){
+    document.getElementById("candidate-name-hero").textContent = siteData.candidateName;
+  }
+  if(placeholderIfEmpty(siteData.candidatePosition)){
+    document.getElementById("candidate-position-hero").textContent = siteData.candidatePosition;
+  }
+  if(placeholderIfEmpty(siteData.candidatePhotoUrl)){
+    document.getElementById("candidate-photo").src = siteData.candidatePhotoUrl;
+  }
+  const introEl = document.getElementById("panchayat-intro-text");
+  introEl.textContent = placeholderIfEmpty(siteData.panchayatIntro) || "यह जानकारी जल्द जोड़ी जाएगी।";
+  introEl.className = placeholderIfEmpty(siteData.panchayatIntro) ? "" : "placeholder-text";
+
+  const impEl = document.getElementById("important-info-text");
+  impEl.textContent = placeholderIfEmpty(siteData.importantInfo) || "यह जानकारी जल्द जोड़ी जाएगी।";
+  impEl.className = placeholderIfEmpty(siteData.importantInfo) ? "" : "placeholder-text";
+
+  // contact
+  const phoneEl = document.getElementById("contact-phone");
+  if(placeholderIfEmpty(siteData.phone)){ phoneEl.textContent = siteData.phone; phoneEl.className=""; }
+  const instaEl = document.getElementById("contact-insta");
+  if(placeholderIfEmpty(siteData.insta)){ instaEl.innerHTML = `<a href="${siteData.insta}" target="_blank">Instagram</a>`; instaEl.className=""; }
+  const fbEl = document.getElementById("contact-fb");
+  if(placeholderIfEmpty(siteData.fb)){ fbEl.innerHTML = `<a href="${siteData.fb}" target="_blank">Facebook</a>`; fbEl.className=""; }
+
+  renderVillageSpecific(getSelectedVillage() || VILLAGES[0]);
+}
+
+function renderVillageSpecific(villageName){
+  document.getElementById("village-info-heading").textContent = `${villageName} के लिए जानकारी`;
+  const vData = (siteData.villages && siteData.villages[villageName]) || {};
+  const infoEl = document.getElementById("village-info-text");
+  infoEl.textContent = placeholderIfEmpty(vData.info) || "यह जानकारी जल्द जोड़ी जाएगी।";
+  infoEl.className = placeholderIfEmpty(vData.info) ? "" : "placeholder-text";
+
+  // facilities: split by newline into simple cards, else placeholder
+  const facGrid = document.getElementById("facility-grid");
+  facGrid.innerHTML = "";
+  const lines = (vData.facilities || "").split("\n").map(s=>s.trim()).filter(Boolean);
+  if(lines.length === 0){
+    facGrid.innerHTML = `<div class="info-card" style="grid-column:1/-1;"><p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>`;
+  } else {
+    lines.forEach(line=>{
+      const card = document.createElement("div");
+      card.className = "facility-card";
+      card.innerHTML = `<div class="ic">•</div><p>${line}</p>`;
+      facGrid.appendChild(card);
+    });
+  }
+}
+
+// live-sync public content
+onSnapshot(siteDocRef, (snap)=>{
+  if(snap.exists()){
+    siteData = { ...siteData, ...snap.data() };
+    renderPublicContent();
+    if(document.getElementById("admin-dash").style.display !== "none"){
+      fillAdminFormsFromSiteData();
+    }
+  }
+});
+
+// ---------- Visitor / village selection state ----------
+function getVisitorName(){ return localStorage.getItem("visitorName") || ""; }
+function getSelectedVillage(){ return localStorage.getItem("selectedVillage") || ""; }
+
+function buildVillageGrid(container, onPick){
+  container.innerHTML = "";
+  VILLAGES.forEach(v=>{
+    const btn = document.createElement("button");
+    btn.className = "village-pick";
+    btn.textContent = v;
+    btn.addEventListener("click", ()=> onPick(v));
+    container.appendChild(btn);
+  });
+}
+
+// ---------- Welcome flow ----------
+const overlay = document.getElementById("welcome-overlay");
+const stepName = document.getElementById("step-name");
+const stepVillage = document.getElementById("step-village");
+const stepGreet = document.getElementById("step-greet");
+const nameInput = document.getElementById("visitor-name-input");
+const nameNextBtn = document.getElementById("name-next-btn");
+
+nameInput.addEventListener("input", ()=>{
+  nameNextBtn.disabled = nameInput.value.trim().length === 0;
+});
+nameNextBtn.addEventListener("click", ()=>{
+  const name = nameInput.value.trim();
+  if(!name) return;
+  localStorage.setItem("visitorName", name);
+  stepName.classList.remove("active");
+  stepVillage.classList.add("active");
+  buildVillageGrid(document.getElementById("village-grid-welcome"), (village)=>{
+    localStorage.setItem("selectedVillage", village);
+    logVisitor(name, village);
+    document.getElementById("greet-name").textContent = `नमस्कार, ${name} जी`;
+    document.getElementById("greet-village").textContent = `आपने ${village} चुना है।`;
+    stepVillage.classList.remove("active");
+    stepGreet.classList.add("active");
+  });
+});
+document.getElementById("enter-site-btn").addEventListener("click", ()=>{
+  overlay.style.display = "none";
+  showMainSite();
+});
+
+function logVisitor(name, village){
+  addDoc(collection(db, "visitors"), {
+    name, village, createdAt: serverTimestamp()
+  }).catch(()=>{ /* silently ignore if offline */ });
+}
+
+function showMainSite(){
+  document.getElementById("main-site").style.display = "block";
+  document.getElementById("profile-name-text").textContent = getVisitorName() || "आगंतुक";
+  document.getElementById("avatar-letter").textContent = (getVisitorName() || "आ").charAt(0);
+  document.getElementById("profile-village-text").textContent = getSelectedVillage() || "—";
+  document.getElementById("hero-selected-village").textContent = getSelectedVillage() || VILLAGES[0];
+  buildVillageStrip();
+  renderPublicContent();
+  setupScrollReveal();
+}
+
+function buildVillageStrip(){
+  const strip = document.getElementById("village-strip");
+  strip.innerHTML = "";
+  VILLAGES.forEach(v=>{
+    const chip = document.createElement("button");
+    chip.className = "village-chip" + (v === getSelectedVillage() ? " active" : "");
+    chip.textContent = v;
+    chip.addEventListener("click", ()=> selectVillage(v));
+    strip.appendChild(chip);
+  });
+}
+
+function selectVillage(village){
+  localStorage.setItem("selectedVillage", village);
+  document.getElementById("profile-village-text").textContent = village;
+  document.getElementById("hero-selected-village").textContent = village;
+  buildVillageStrip();
+  renderVillageSpecific(village);
+  const name = getVisitorName();
+  if(name) logVisitor(name, village); // log village change too
+}
+
+// Village switcher modal (hero + profile "बदलें")
+const villageModal = document.getElementById("village-modal");
+function openVillageModal(){
+  buildVillageGrid(document.getElementById("village-grid-modal"), (v)=>{
+    selectVillage(v);
+    villageModal.classList.remove("open");
+  });
+  villageModal.classList.add("open");
+}
+document.getElementById("change-village-btn-hero").addEventListener("click", openVillageModal);
+document.getElementById("badal-btn").addEventListener("click", openVillageModal);
+document.getElementById("village-modal-close").addEventListener("click", ()=> villageModal.classList.remove("open"));
+
+// ---------- Init: decide whether to show welcome or main site ----------
+window.addEventListener("DOMContentLoaded", ()=>{
+  // Admin route via #admin hash
+  if(window.location.hash === "#admin"){
+    document.getElementById("admin-screen").classList.add("open");
+    overlay.style.display = "none";
+    return;
+  }
+  if(getVisitorName() && getSelectedVillage()){
+    overlay.style.display = "none";
+    showMainSite();
+  }
+});
+
+function setupScrollReveal(){
+  const items = document.querySelectorAll(".reveal");
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("in"); });
+  }, { threshold: 0.15 });
+  items.forEach(i=>obs.observe(i));
+}
+
+// =====================================================================
+// ADMIN PANEL
+// Admin login uses Firebase Authentication (email/password).
+// No admin password is ever stored or hardcoded in this file — the
+// account is created and managed directly in the Firebase console
+// (Authentication → Users), so only the real owner controls access.
+// =====================================================================
+const adminLoginCard = document.getElementById("admin-login-card");
+const adminDash = document.getElementById("admin-dash");
+
+document.getElementById("admin-login-btn").addEventListener("click", async ()=>{
+  const email = document.getElementById("admin-email").value.trim();
+  const pass = document.getElementById("admin-password").value;
+  const errEl = document.getElementById("admin-login-error");
+  errEl.textContent = "";
+  try{
+    await signInWithEmailAndPassword(auth, email, pass);
+  }catch(e){
+    errEl.textContent = "लॉगिन विफल — ईमेल या पासवर्ड गलत है।";
+  }
+});
+
+document.getElementById("admin-logout-btn").addEventListener("click", ()=> signOut(auth));
+
+onAuthStateChanged(auth, (user)=>{
+  if(user){
+    adminLoginCard.style.display = "none";
+    adminDash.style.display = "block";
+    fillAdminFormsFromSiteData();
+    buildVisitorsTable();
+  } else {
+    adminLoginCard.style.display = "block";
+    adminDash.style.display = "none";
+  }
+});
+
+// tabs
+document.querySelectorAll(".admin-tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".admin-tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".admin-panel-section").forEach(s=>s.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab).classList.add("active");
+  });
+});
+
+function fillAdminFormsFromSiteData(){
+  document.getElementById("f-cand-name").value = siteData.candidateName || "";
+  document.getElementById("f-cand-position").value = siteData.candidatePosition || "";
+  document.getElementById("f-symbol-name").value = siteData.symbolName || "";
+  document.getElementById("f-panchayat-intro").value = siteData.panchayatIntro || "";
+  document.getElementById("f-important-info").value = siteData.importantInfo || "";
+  document.getElementById("f-phone").value = siteData.phone || "";
+  document.getElementById("f-insta").value = siteData.insta || "";
+  document.getElementById("f-fb").value = siteData.fb || "";
+  if(siteData.candidatePhotoUrl){
+    const p = document.getElementById("f-cand-photo-preview");
+    p.src = siteData.candidatePhotoUrl; p.style.display = "block";
+  }
+  if(siteData.symbolPhotoUrl){
+    const p = document.getElementById("f-symbol-photo-preview");
+    p.src = siteData.symbolPhotoUrl; p.style.display = "block";
+  }
+  buildVillageEditForms();
+}
+
+async function uploadIfSelected(inputId, storagePath){
+  const input = document.getElementById(inputId);
+  if(input.files && input.files[0]){
+    const file = input.files[0];
+    const fileRef = ref(storage, `${storagePath}/${Date.now()}_${file.name}`);
+    await uploadBytes(fileRef, file);
+    return await getDownloadURL(fileRef);
+  }
+  return null;
+}
+
+document.getElementById("save-candidate-btn").addEventListener("click", async ()=>{
+  const statusEl = document.getElementById("candidate-save-status");
+  statusEl.textContent = "सहेजा जा रहा है...";
+  try{
+    const candPhotoUrl = await uploadIfSelected("f-cand-photo", "candidate");
+    const symbolPhotoUrl = await uploadIfSelected("f-symbol-photo", "symbol");
+    const update = {
+      candidateName: document.getElementById("f-cand-name").value.trim(),
+      candidatePosition: document.getElementById("f-cand-position").value.trim(),
+      symbolName: document.getElementById("f-symbol-name").value.trim(),
+      panchayatIntro: document.getElementById("f-panchayat-intro").value.trim(),
+      importantInfo: document.getElementById("f-important-info").value.trim(),
+    };
+    if(candPhotoUrl) update.candidatePhotoUrl = candPhotoUrl;
+    if(symbolPhotoUrl) update.symbolPhotoUrl = symbolPhotoUrl;
+    await setDoc(siteDocRef, update, { merge: true });
+    statusEl.textContent = "सहेज लिया गया ✓";
+  }catch(e){
+    statusEl.textContent = "त्रुटि: सहेजा नहीं जा सका।";
+  }
+});
+
+document.getElementById("save-contact-btn").addEventListener("click", async ()=>{
+  const statusEl = document.getElementById("contact-save-status");
+  statusEl.textContent = "सहेजा जा रहा है...";
+  try{
+    await setDoc(siteDocRef, {
+      phone: document.getElementById("f-phone").value.trim(),
+      insta: document.getElementById("f-insta").value.trim(),
+      fb: document.getElementById("f-fb").value.trim(),
+    }, { merge: true });
+    statusEl.textContent = "सहेज लिया गया ✓";
+  }catch(e){
+    statusEl.textContent = "त्रुटि: सहेजा नहीं जा सका।";
+  }
+});
+
+function buildVillageEditForms(){
+  const list = document.getElementById("village-edit-list");
+  list.innerHTML = "";
+  VILLAGES.forEach(v=>{
+    const vData = (siteData.villages && siteData.villages[v]) || {};
+    const block = document.createElement("div");
+    block.className = "village-edit-block";
+    block.innerHTML = `
+      <h4>${v}</h4>
+      <div class="admin-field"><label>गाँव के लिए जानकारी</label>
+        <textarea rows="2" data-village="${v}" data-field="info">${vData.info || ""}</textarea></div>
+      <div class="admin-field"><label>नागरिक सुविधाएँ (हर पंक्ति एक सुविधा)</label>
+        <textarea rows="2" data-village="${v}" data-field="facilities">${vData.facilities || ""}</textarea></div>
+    `;
+    list.appendChild(block);
+  });
+}
+
+document.getElementById("save-villages-btn").addEventListener("click", async ()=>{
+  const statusEl = document.getElementById("villages-save-status");
+  statusEl.textContent = "सहेजा जा रहा है...";
+  const villagesUpdate = { ...(siteData.villages || {}) };
+  document.querySelectorAll("#village-edit-list textarea").forEach(ta=>{
+    const v = ta.dataset.village, field = ta.dataset.field;
+    villagesUpdate[v] = villagesUpdate[v] || {};
+    villagesUpdate[v][field] = ta.value.trim();
+  });
+  try{
+    await setDoc(siteDocRef, { villages: villagesUpdate }, { merge: true });
+    statusEl.textContent = "सहेज लिया गया ✓";
+  }catch(e){
+    statusEl.textContent = "त्रुटि: सहेजा नहीं जा सका।";
+  }
+});
+
+function buildVisitorsTable(){
+  const q = query(collection(db, "visitors"), orderBy("createdAt", "desc"), limit(200));
+  onSnapshot(q, (snap)=>{
+    const body = document.getElementById("visitors-table-body");
+    body.innerHTML = "";
+    snap.forEach(docSnap=>{
+      const d = docSnap.data();
+      const tr = document.createElement("tr");
+      const time = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate().toLocaleString("hi-IN") : "—";
+      tr.innerHTML = `<td>${d.name || "—"}</td><td>${d.village || "—"}</td><td>${time}</td>`;
+      body.appendChild(tr);
+    });
+  });
+}
+</script>
+</body>
+</html>
