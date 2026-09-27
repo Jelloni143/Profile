@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>गोपाल रेगर — सरपंच पद के उम्मीदवार | ग्राम पंचायत नयागांव</title>
+<meta name="description" content="गोपाल रेगर, सरपंच पद के उम्मीदवार, ग्राम पंचायत नयागांव, देवली, टोंक, राजस्थान — आधिकारिक सूचना वेबसाइट।" />
+<meta name="keywords" content="गोपाल रेगर, सरपंच, नयागांव, ग्राम पंचायत, देवली, टोंक, राजस्थान" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="गोपाल रेगर — सरपंच पद के उम्मीदवार | ग्राम पंचायत नयागांव" />
+<meta property="og:description" content="ग्राम पंचायत नयागांव, देवली, टोंक, राजस्थान — उम्मीदवार सूचना वेबसाइट" />
+<meta property="og:image" content="candidate-poster.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="गोपाल रेगर — सरपंच पद के उम्मीदवार" />
+<meta name="twitter:image" content="candidate-poster.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<style>
+  :root{
+    --green-deep:#1B4D3E;
+    --green-deep-dark:#0F332A;
+    --cream:#FAF3E0;
+    --cream-soft:#F3EAD2;
+    --white:#FFFFFF;
+    --red-warm:#B23A2E;
+    --gold:#C9973B;
+    --ink:#22291F;
+    --ink-soft:#5B6459;
+    --card-bg:#FFFFFF;
+    --border-soft:#EFE4C4;
+    --shadow-soft: 0 10px 30px rgba(15,51,42,0.12);
+    --radius-lg: 22px;
+    --radius-md: 14px;
+  }
+  :root[data-theme="dark"]{
+    --cream:#10201A;
+    --cream-soft:#16281F;
+    --white:#17281F;
+    --card-bg:#1C3128;
+    --ink:#EDEBDD;
+    --ink-soft:#B8C2B6;
+    --border-soft:#2A4235;
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:64px;
+    transition:background .3s ease, color .3s ease;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2','Noto Sans Devanagari',sans-serif;
+    margin:0;
+  }
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+  img{max-width:100%;display:block;}
+
+  .motif-divider{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    margin:6px 0 28px;color:var(--gold);
+  }
+  .motif-divider span{width:34px;height:2px;background:var(--gold);opacity:.6;display:block;}
+  .motif-divider svg{width:20px;height:20px;}
+
+  /* Loading spinner */
+  #loading-spinner{
+    position:fixed;inset:0;background:var(--green-deep-dark);z-index:998;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:var(--cream);
+  }
+  .spinner{width:46px;height:46px;border:4px solid rgba(255,255,255,.25);border-top-color:var(--gold);border-radius:50%;animation:spin 0.9s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* Offline banner */
+  #offline-banner{
+    display:none;position:fixed;top:0;left:0;right:0;z-index:970;
+    background:var(--red-warm);color:#fff;text-align:center;padding:8px;font-size:.85rem;font-weight:600;
+  }
+  #offline-banner.show{display:block;}
+
+  /* Toast */
+  #toast-container{position:fixed;bottom:80px;left:0;right:0;display:flex;justify-content:center;z-index:995;pointer-events:none;}
+  .toast{background:var(--green-deep-dark);color:#fff;padding:12px 22px;border-radius:30px;font-size:.9rem;box-shadow:0 10px 24px rgba(0,0,0,.3);animation:toastIn .25s ease both;}
+  @keyframes toastIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+  /* Generic confirm modal */
+  .confirm-overlay{position:fixed;inset:0;background:rgba(15,51,42,.55);z-index:996;display:none;align-items:center;justify-content:center;padding:20px;}
+  .confirm-overlay.open{display:flex;}
+  .confirm-card{background:var(--cream);border-radius:18px;padding:24px;max-width:360px;width:100%;text-align:center;}
+  .confirm-card p{color:var(--ink);margin-bottom:16px;}
+  .confirm-actions{display:flex;gap:10px;}
+  .confirm-actions button{flex:1;padding:10px;border-radius:10px;border:none;font-weight:600;}
+  .confirm-yes{background:var(--red-warm);color:#fff;}
+  .confirm-no{background:var(--border-soft);color:var(--ink);}
+
+  #welcome-overlay{
+    position:fixed;inset:0;z-index:999;
+    background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-deep-dark) 100%);
+    display:flex;align-items:center;justify-content:center;
+    padding:24px;
+  }
+  .welcome-card{
+    background:var(--cream);border-radius:var(--radius-lg);padding:36px 28px;
+    max-width:440px;width:100%;box-shadow:0 30px 60px rgba(0,0,0,.35);
+    text-align:center;animation:riseIn .6s ease both;
+  }
+  @keyframes riseIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  .welcome-card h1{font-size:2rem;color:var(--green-deep-dark);}
+  .welcome-card p.sub{color:var(--ink-soft);margin-top:8px;font-size:1.05rem;}
+  .welcome-step{display:none;}
+  .welcome-step.active{display:block;animation:fadeIn .4s ease both;}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+  .name-input{
+    width:100%;margin-top:22px;padding:14px 16px;border-radius:12px;
+    border:2px solid var(--border-soft);font-size:1.05rem;background:var(--white);
+    font-family:inherit;color:var(--ink);
+  }
+  .name-input:focus{outline:none;border-color:var(--gold);}
+  .btn-primary{
+    margin-top:20px;width:100%;padding:14px;border:none;border-radius:12px;
+    background:var(--red-warm);color:#fff;font-size:1.05rem;font-weight:600;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn-primary:hover{background:#9A2F25;transform:translateY(-1px);}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+  .village-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;}
+  .village-pick{
+    background:var(--white);border:2px solid var(--border-soft);border-radius:14px;
+    padding:18px 10px;font-size:1.05rem;font-weight:600;color:var(--green-deep-dark);
+    transition:all .18s ease;
+  }
+  :root[data-theme="dark"] .village-pick{color:var(--gold);}
+  .village-pick:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-soft);}
+  .welcome-greet-icon{
+    width:64px;height:64px;border-radius:50%;background:var(--green-deep);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+    color:var(--gold);font-size:1.8rem;font-family:'Baloo 2';
+  }
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,243,224,0.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  :root[data-theme="dark"] header{background:rgba(16,32,26,0.92);}
+  .header-inner{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:40px;height:40px;border-radius:10px;background:var(--green-deep);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-weight:700;font-size:1.1rem;}
+  .brand-text{font-family:'Baloo 2';font-weight:700;font-size:1.15rem;color:var(--green-deep-dark);}
+  :root[data-theme="dark"] .brand-text{color:var(--gold);}
+  nav.desktop-nav{display:flex;gap:22px;align-items:center;}
+  nav.desktop-nav a{font-weight:600;color:var(--ink-soft);font-size:.96rem;position:relative;padding:4px 0;}
+  nav.desktop-nav a:hover{color:var(--green-deep-dark);}
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .icon-btn{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--border-soft);background:var(--white);
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  }
+
+  .search-wrap{max-width:1180px;margin:16px auto 0;padding:0 20px;}
+  .search-box{
+    display:flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid var(--border-soft);
+    border-radius:30px;padding:8px 16px;box-shadow:var(--shadow-soft);
+  }
+  .search-box input{flex:1;border:none;outline:none;background:transparent;font-family:inherit;font-size:.95rem;color:var(--ink);}
+
+  .hero{max-width:1180px;margin:0 auto;padding:24px 20px 10px;display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;}
+  .hero-photo-wrap{border-radius:26px;overflow:hidden;box-shadow:var(--shadow-soft);border:6px solid var(--white);}
+  .hero-photo-wrap img{width:100%;height:auto;}
+  .hero-content .eyebrow{color:var(--red-warm);font-weight:700;letter-spacing:.02em;font-size:.98rem;}
+  .hero-content h1{font-size:clamp(2.2rem,5vw,3.4rem);color:var(--green-deep-dark);line-height:1.1;margin-top:6px;}
+  :root[data-theme="dark"] .hero-content h1{color:var(--gold);}
+  .hero-content .position-badge{display:inline-block;margin-top:14px;background:var(--green-deep);color:#fff;padding:9px 18px;border-radius:30px;font-weight:600;font-size:1rem;}
+  .hero-content .panchayat-line{margin-top:12px;color:var(--ink-soft);font-size:1.08rem;}
+  .event-badge{display:none;margin-top:14px;background:var(--gold);color:#2b2107;padding:8px 16px;border-radius:10px;font-weight:700;font-size:.92rem;}
+  .area-card{margin-top:22px;background:var(--card-bg);border-radius:16px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:var(--shadow-soft);border:1px solid var(--border-soft);}
+  .area-card .label{font-size:.85rem;color:var(--ink-soft);}
+  .area-card .value{font-family:'Baloo 2';font-weight:700;color:var(--green-deep-dark);font-size:1.15rem;margin-top:2px;}
+  :root[data-theme="dark"] .area-card .value{color:var(--gold);}
+  .change-village-btn{background:var(--cream-soft);border:1px solid var(--gold);color:var(--green-deep-dark);padding:9px 16px;border-radius:30px;font-weight:600;font-size:.92rem;white-space:nowrap;}
+  :root[data-theme="dark"] .change-village-btn{color:var(--gold);}
+  .change-village-btn:hover{background:var(--gold);color:#fff;}
+  .hero-extra-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+  .whatsapp-btn{background:#25D366;color:#fff;padding:10px 16px;border-radius:30px;font-weight:600;font-size:.9rem;border:none;display:inline-flex;align-items:center;gap:6px;}
+
+  section.block{max-width:1180px;margin:0 auto;padding:56px 20px;}
+  .section-head{max-width:640px;margin:0 auto 30px;text-align:center;}
+  .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--green-deep-dark);}
+  :root[data-theme="dark"] .section-head h2{color:var(--gold);}
+  .section-head p{color:var(--ink-soft);margin-top:10px;font-size:1.02rem;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .glass-card{background:var(--card-bg);border:1px solid var(--border-soft);border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);padding:28px;}
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .info-card{background:var(--card-bg);border-radius:var(--radius-md);padding:22px;border:1px solid var(--border-soft);box-shadow:0 6px 18px rgba(15,51,42,.06);}
+  .info-card h3{color:var(--green-deep-dark);font-size:1.15rem;margin-bottom:8px;}
+  :root[data-theme="dark"] .info-card h3{color:var(--gold);}
+  .info-card p{color:var(--ink-soft);line-height:1.6;margin:0;}
+  .placeholder-text{color:#9A9484;font-style:italic;}
+
+  .village-strip{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;}
+  .village-chip{flex:0 0 auto;background:var(--card-bg);border:1.5px solid var(--border-soft);border-radius:30px;padding:10px 20px;font-weight:600;color:var(--ink-soft);font-size:.95rem;white-space:nowrap;}
+  .village-chip.active{background:var(--green-deep);border-color:var(--green-deep);color:#fff;}
+  .village-chip.hidden-search{display:none;}
+
+  .facility-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .facility-card{background:var(--card-bg);border-radius:var(--radius-md);padding:20px;text-align:center;border:1px solid var(--border-soft);}
+  .facility-card .ic{width:46px;height:46px;border-radius:50%;background:var(--cream-soft);color:var(--red-warm);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;}
+  .facility-card h4{font-size:1rem;color:var(--green-deep-dark);margin-bottom:6px;}
+  .facility-card p{font-size:.9rem;color:var(--ink-soft);margin:0;}
+
+  .profile-panel{max-width:1180px;margin:0 auto;padding:0 20px 10px;}
+  .profile-panel .glass-card{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+  .profile-left{display:flex;align-items:center;gap:12px;}
+  .profile-avatar{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-weight:700;}
+  .profile-name{font-weight:700;color:var(--green-deep-dark);}
+  :root[data-theme="dark"] .profile-name{color:var(--gold);}
+  .profile-village{font-size:.88rem;color:var(--ink-soft);}
+  .badal-btn{background:none;border:1.5px solid var(--red-warm);color:var(--red-warm);padding:7px 16px;border-radius:30px;font-weight:600;font-size:.88rem;}
+  .badal-btn:hover{background:var(--red-warm);color:#fff;}
+
+  .stat-strip{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+  .stat-card{background:var(--card-bg);border:1px solid var(--border-soft);border-radius:14px;padding:14px 22px;text-align:center;min-width:140px;}
+  .stat-card .num{font-family:'Baloo 2';font-size:1.5rem;color:var(--green-deep-dark);font-weight:700;}
+  :root[data-theme="dark"] .stat-card .num{color:var(--gold);}
+  .stat-card .lbl{font-size:.8rem;color:var(--ink-soft);}
+
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .gallery-grid img{border-radius:14px;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--border-soft);}
+  .video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:18px;box-shadow:var(--shadow-soft);}
+  .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+  .notice-item{background:var(--card-bg);border:1px solid var(--border-soft);border-left:4px solid var(--red-warm);border-radius:10px;padding:14px 18px;margin-bottom:10px;}
+  .notice-item .n-date{font-size:.8rem;color:var(--gold);font-weight:700;}
+  .notice-item .n-text{margin-top:4px;color:var(--ink);}
+
+  .faq-item{border-bottom:1px solid var(--border-soft);padding:14px 0;}
+  .faq-q{font-weight:700;color:var(--green-deep-dark);cursor:pointer;display:flex;justify-content:space-between;}
+  :root[data-theme="dark"] .faq-q{color:var(--gold);}
+  .faq-a{margin-top:8px;color:var(--ink-soft);display:none;}
+  .faq-item.open .faq-a{display:block;}
+
+  .feedback-form textarea,.feedback-form input{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border-soft);font-family:inherit;font-size:.95rem;margin-bottom:12px;background:var(--white);color:var(--ink);}
+
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .contact-card{background:var(--card-bg);border-radius:var(--radius-md);padding:22px;text-align:center;border:1px solid var(--border-soft);}
+  .contact-card .ic{color:var(--green-deep);margin-bottom:10px;}
+  .contact-card a{color:var(--green-deep-dark);font-weight:600;word-break:break-word;}
+  :root[data-theme="dark"] .contact-card a{color:var(--gold);}
+
+  .qr-block{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;}
+  .qr-block canvas{border-radius:12px;background:#fff;padding:8px;}
+
+  footer{background:var(--green-deep-dark);color:var(--cream);padding:34px 20px 20px;text-align:center;}
+  footer .foot-title{font-family:'Baloo 2';font-size:1.2rem;color:var(--gold);}
+  footer .foot-sub{margin-top:4px;color:#CFE0D6;font-size:.95rem;}
+  footer .foot-note{margin-top:18px;font-size:.78rem;color:#8FA79B;}
+
+  .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--white);border-top:1px solid var(--border-soft);padding:8px 6px calc(8px + env(safe-area-inset-bottom));justify-content:space-around;box-shadow:0 -6px 18px rgba(0,0,0,.06);}
+  .bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.72rem;color:var(--ink-soft);font-weight:600;padding:4px 6px;}
+
+  .fab{position:fixed;z-index:80;width:52px;height:52px;border-radius:50%;background:var(--red-warm);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 10px 24px rgba(0,0,0,.25);border:none;opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;}
+  .fab.show{opacity:1;pointer-events:auto;}
+  #back-to-top{right:16px;bottom:80px;background:var(--green-deep);}
+  #floating-village-btn{left:16px;bottom:80px;display:none;}
+  @media (max-width:860px){ #floating-village-btn{display:flex;} }
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(15,51,42,0.55);z-index:900;display:none;align-items:center;justify-content:center;padding:20px;}
+  .modal-overlay.open{display:flex;}
+  .modal-card{background:var(--cream);border-radius:var(--radius-lg);padding:28px;max-width:440px;width:100%;animation:riseIn .35s ease both;}
+  .modal-card h3{color:var(--green-deep-dark);font-size:1.3rem;margin-bottom:4px;}
+  :root[data-theme="dark"] .modal-card h3{color:var(--gold);}
+  .modal-close{margin-top:16px;width:100%;padding:12px;border:none;border-radius:12px;background:var(--cream-soft);color:var(--ink-soft);font-weight:600;}
+
+  #admin-screen{display:none;min-height:100vh;background:var(--green-deep-dark);padding:30px 16px;}
+  #admin-screen.open{display:block;}
+  .admin-wrap{max-width:900px;margin:0 auto;}
+  .admin-login-card{max-width:400px;margin:60px auto;background:var(--cream);border-radius:var(--radius-lg);padding:30px;box-shadow:0 20px 50px rgba(0,0,0,.4);}
+  .admin-login-card h2{color:var(--green-deep-dark);margin-bottom:6px;}
+  .admin-field{margin-top:14px;}
+  .admin-field label{font-size:.85rem;color:var(--ink-soft);display:block;margin-bottom:5px;}
+  .admin-field input,.admin-field textarea{width:100%;padding:11px 13px;border-radius:10px;border:1.5px solid var(--border-soft);font-family:inherit;font-size:.95rem;background:var(--white);color:var(--ink);}
+  .admin-error{color:var(--red-warm);font-size:.85rem;margin-top:10px;}
+  .admin-dash{background:var(--cream);border-radius:var(--radius-lg);padding:26px;}
+  .admin-topbar{display:flex;justify-content:space-between;align-items:center;color:var(--cream);margin-bottom:18px;}
+  .admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+  .admin-tab{background:var(--white);border:1px solid var(--border-soft);padding:9px 16px;border-radius:30px;font-size:.85rem;font-weight:600;color:var(--ink-soft);}
+  .admin-tab.active{background:var(--green-deep);color:#fff;border-color:var(--green-deep);}
+  .admin-panel-section{display:none;}
+  .admin-panel-section.active{display:block;}
+  .admin-save-btn{margin-top:16px;background:var(--green-deep);color:#fff;border:none;padding:11px 22px;border-radius:10px;font-weight:600;}
+  .admin-save-btn:hover{background:var(--green-deep-dark);}
+  .admin-status{margin-top:10px;font-size:.85rem;color:var(--green-deep-dark);}
+  .admin-logout{background:none;border:1px solid var(--cream);color:var(--cream);padding:7px 14px;border-radius:20px;font-size:.82rem;}
+  table.admin-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.88rem;}
+  table.admin-table th,table.admin-table td{text-align:right;padding:9px;border-bottom:1px solid var(--border-soft);}
+  table.admin-table th{color:var(--ink-soft);font-weight:600;}
+  .village-edit-block{border:1px solid var(--border-soft);border-radius:12px;padding:16px;margin-bottom:14px;background:var(--white);}
+  .village-edit-block h4{color:var(--green-deep-dark);margin-bottom:10px;}
+  .thumb-preview{width:70px;height:70px;border-radius:12px;object-fit:cover;margin-top:8px;border:1px solid var(--border-soft);}
+  .mini-btn{background:var(--border-soft);border:none;padding:6px 12px;border-radius:8px;font-size:.8rem;font-weight:600;color:var(--ink);}
+  .mini-btn.danger{background:#F5D6D0;color:var(--red-warm);}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .bar-row .bar-label{width:90px;font-size:.85rem;color:var(--ink-soft);}
+  .bar-row .bar-track{flex:1;background:var(--border-soft);border-radius:6px;height:16px;overflow:hidden;}
+  .bar-row .bar-fill{height:100%;background:var(--green-deep);}
+  .bar-row .bar-count{width:30px;font-size:.85rem;color:var(--ink-soft);}
+
+  @media (max-width:860px){
+    nav.desktop-nav{display:none;}
+    .bottom-nav{display:flex;}
+    .hero{grid-template-columns:1fr;}
+    .intro-grid{grid-template-columns:1fr;}
+    .facility-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media print{
+    header,.bottom-nav,.fab,#welcome-overlay,.profile-panel,.change-village-btn,.hero-extra-actions,.search-wrap,.feedback-form,#admin-screen{display:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div id="offline-banner">आप अभी ऑफ़लाइन हैं — कुछ जानकारी अपडेट नहीं होगी</div>
+
+<div id="loading-spinner"><div class="spinner"></div><div>जानकारी लोड हो रही है...</div></div>
+
+<div id="toast-container"></div>
+
+<div class="confirm-overlay" id="confirm-overlay">
+  <div class="confirm-card">
+    <p id="confirm-message">क्या आप वाकई हटाना चाहते हैं?</p>
+    <div class="confirm-actions">
+      <button class="confirm-no" id="confirm-no-btn">रद्द करें</button>
+      <button class="confirm-yes" id="confirm-yes-btn">हटाएं</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WELCOME OVERLAY ============ -->
+<div id="welcome-overlay">
+  <div class="welcome-card">
+    <div class="welcome-step active" id="step-name">
+      <h1>स्वागत है</h1>
+      <p class="sub">आपका नाम क्या है?</p>
+      <input type="text" id="visitor-name-input" class="name-input" placeholder="अपना नाम लिखें" />
+      <button class="btn-primary" id="name-next-btn" disabled>आगे बढ़ें</button>
+    </div>
+    <div class="welcome-step" id="step-village">
+      <h1 style="font-size:1.5rem;">आप किस गाँव से हैं?</h1>
+      <div class="village-grid" id="village-grid-welcome"></div>
+    </div>
+    <div class="welcome-step" id="step-greet">
+      <div class="welcome-greet-icon">🙏</div>
+      <h1 id="greet-name" style="font-size:1.5rem;">नमस्कार जी</h1>
+      <p class="sub" id="greet-village">आपने चुना है।</p>
+      <button class="btn-primary" id="enter-site-btn">वेबसाइट खोलें</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="village-modal">
+  <div class="modal-card">
+    <h3>गाँव बदलें</h3>
+    <p style="color:var(--ink-soft);font-size:.92rem;">अपना क्षेत्र चुनें</p>
+    <div class="village-grid" id="village-grid-modal"></div>
+    <button class="modal-close" id="village-modal-close">रद्द करें</button>
+  </div>
+</div>
+
+<button class="fab" id="back-to-top" title="ऊपर जाएं">↑</button>
+<button class="fab" id="floating-village-btn" title="गाँव बदलें">📍</button>
+
+<!-- ============ MAIN SITE ============ -->
+<div id="main-site" style="display:none;">
+
+  <header>
+    <div class="header-inner">
+      <div class="brand"><div class="brand-mark">न</div><div class="brand-text">नयागांव</div></div>
+      <nav class="desktop-nav">
+        <a href="#home">होम</a>
+        <a href="#candidate">उम्मीदवार</a>
+        <a href="#village">गाँव</a>
+        <a href="#info">जानकारी</a>
+        <a href="#gallery">गैलरी</a>
+        <a href="#contact">संपर्क</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="dark-toggle-btn" title="डार्क मोड">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-wrap">
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" id="site-search-input" placeholder="गाँव खोजें..." />
+    </div>
+  </div>
+
+  <div class="profile-panel">
+    <div class="glass-card" style="margin-top:16px;padding:14px 20px;">
+      <div class="profile-left">
+        <div class="profile-avatar" id="avatar-letter">आ</div>
+        <div>
+          <div class="profile-name"><span id="profile-name-text">आगंतुक</span> जी</div>
+          <div class="profile-village">गाँव: <span id="profile-village-text">—</span></div>
+        </div>
+      </div>
+      <button class="badal-btn" id="badal-btn">बदलें</button>
+    </div>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-photo-wrap"><img id="candidate-photo" src="candidate-poster.png" alt="गोपाल रेगर — सरपंच पद के उम्मीदवार" /></div>
+    <div class="hero-content">
+      <div class="eyebrow">ग्राम पंचायत नयागांव</div>
+      <h1 id="candidate-name-hero">गोपाल रेगर</h1>
+      <div class="position-badge" id="candidate-position-hero">सरपंच पद के उम्मीदवार</div>
+      <p class="panchayat-line">ग्राम पंचायत नयागांव · देवली, टोंक, राजस्थान</p>
+      <div class="event-badge" id="event-badge"></div>
+      <div class="area-card">
+        <div><div class="label">आपका क्षेत्र</div><div class="value" id="hero-selected-village">नयागांव</div></div>
+        <button class="change-village-btn" id="change-village-btn-hero">गाँव बदलें</button>
+      </div>
+      <div class="hero-extra-actions">
+        <button class="whatsapp-btn" id="whatsapp-share-btn">📱 WhatsApp पर शेयर करें</button>
+        <button class="change-village-btn" id="print-btn">🖨️ प्रिंट करें</button>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-card"><div class="num" id="total-visitor-count">—</div><div class="lbl">कुल आगंतुक</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="candidate">
+    <div class="section-head"><h2>उम्मीदवार परिचय</h2>
+      <div class="motif-divider"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg><span></span></div>
+    </div>
+    <div class="intro-grid">
+      <div class="info-card"><h3>गोपाल रेगर</h3><p>सरपंच पद के उम्मीदवार, ग्राम पंचायत नयागांव।</p></div>
+      <div class="info-card"><h3>ग्राम पंचायत परिचय</h3><p id="panchayat-intro-text" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="village" style="padding-top:0;">
+    <div class="section-head"><h2>चुना हुआ गाँव</h2><p>नीचे दिए गए गाँवों में से किसी को भी चुनकर जानकारी देखें</p></div>
+    <div class="village-strip" id="village-strip"></div>
+  </section>
+
+  <section class="block reveal" id="info">
+    <div class="section-head"><h2 id="village-info-heading">नयागांव के लिए जानकारी</h2>
+      <div class="motif-divider"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3l-6.3 4.4 2.3-7.1-6-4.4h7.6z"/></svg><span></span></div>
+    </div>
+    <div class="glass-card"><p id="village-info-text" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>
+  </section>
+
+  <section class="block reveal"><div class="section-head"><h2>नागरिक सुविधाएँ</h2></div>
+    <div class="facility-grid" id="facility-grid"></div>
+  </section>
+
+  <section class="block reveal"><div class="section-head"><h2>महत्वपूर्ण जानकारी</h2></div>
+    <div class="glass-card"><p id="important-info-text" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>
+  </section>
+
+  <section class="block reveal" id="manifesto-section" style="display:none;">
+    <div class="section-head"><h2>घोषणा पत्र</h2></div>
+    <div class="glass-card" style="text-align:center;">
+      <a id="manifesto-link" href="#" target="_blank" class="btn-primary" style="display:inline-block;width:auto;padding:12px 26px;">📄 घोषणा पत्र देखें (PDF)</a>
+    </div>
+  </section>
+
+  <section class="block reveal" id="gallery">
+    <div class="section-head"><h2>फोटो गैलरी</h2></div>
+    <div class="gallery-grid" id="gallery-grid"><p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>
+  </section>
+
+  <section class="block reveal" id="video-section" style="display:none;">
+    <div class="section-head"><h2>वीडियो संदेश</h2></div>
+    <div class="video-wrap"><iframe id="video-iframe" src="" allowfullscreen></iframe></div>
+  </section>
+
+  <section class="block reveal">
+    <div class="section-head"><h2>सूचना बोर्ड</h2></div>
+    <div id="notice-board"><p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>
+  </section>
+
+  <section class="block reveal">
+    <div class="section-head"><h2>अक्सर पूछे जाने वाले प्रश्न</h2></div>
+    <div class="glass-card" id="faq-list"><p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>
+  </section>
+
+  <section class="block reveal">
+    <div class="section-head"><h2>अपनी राय दें</h2><p>अपने सुझाव या समस्या हमें बताएं</p></div>
+    <div class="glass-card feedback-form">
+      <input type="text" id="feedback-name" placeholder="आपका नाम" />
+      <textarea id="feedback-message" rows="3" placeholder="अपना सुझाव लिखें..."></textarea>
+      <button class="admin-save-btn" id="feedback-submit-btn">भेजें</button>
+      <div class="admin-status" id="feedback-status"></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="contact">
+    <div class="section-head"><h2>संपर्क जानकारी</h2></div>
+    <div class="contact-grid" id="contact-grid">
+      <div class="contact-card"><div class="ic">📞</div><div id="contact-phone" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</div></div>
+      <div class="contact-card"><div class="ic">📷</div><div id="contact-insta" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</div></div>
+      <div class="contact-card"><div class="ic">📘</div><div id="contact-fb" class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</div></div>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <div class="section-head"><h2>वेबसाइट का QR कोड</h2><p>इसे पम्पलेट या बैनर पर छाप सकते हैं</p></div>
+    <div class="qr-block"><canvas id="qr-canvas-public"></canvas></div>
+  </section>
+
+  <footer>
+    <div class="foot-title">ग्राम पंचायत नयागांव</div>
+    <div class="foot-sub">देवली, टोंक, राजस्थान</div>
+    <div class="foot-note">यह एक सूचनात्मक वेबसाइट है।</div>
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="#home">होम</a>
+    <a href="#candidate">उम्मीदवार</a>
+    <a href="#village">गाँव</a>
+    <a href="#info">जानकारी</a>
+    <a href="#contact">संपर्क</a>
+  </nav>
+</div>
+
+<!-- ============ ADMIN SCREEN ============ -->
+<div id="admin-screen">
+  <div class="admin-wrap">
+    <div class="admin-login-card" id="admin-login-card">
+      <h2>एडमिन लॉगिन</h2>
+      <p style="color:var(--ink-soft);font-size:.9rem;">यह पैनल केवल अधिकृत उपयोगकर्ता के लिए है।</p>
+      <div class="admin-field"><label>ईमेल</label><input type="email" id="admin-email" autocomplete="username" /></div>
+      <div class="admin-field"><label>पासवर्ड</label><input type="password" id="admin-password" autocomplete="current-password" /></div>
+      <button class="btn-primary" id="admin-login-btn" style="background:var(--green-deep);">लॉगिन करें</button>
+      <div class="admin-error" id="admin-login-error"></div>
+    </div>
+
+    <div class="admin-dash" id="admin-dash" style="display:none;">
+      <div class="admin-topbar">
+        <div class="brand-text" style="color:var(--gold);">एडमिन पैनल — नयागांव</div>
+        <button class="admin-logout" id="admin-logout-btn">लॉगआउट</button>
+      </div>
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="tab-candidate">उम्मीदवार</button>
+        <button class="admin-tab" data-tab="tab-contact">संपर्क</button>
+        <button class="admin-tab" data-tab="tab-villages">गाँव जानकारी</button>
+        <button class="admin-tab" data-tab="tab-media">गैलरी/वीडियो/PDF</button>
+        <button class="admin-tab" data-tab="tab-notices">सूचना</button>
+        <button class="admin-tab" data-tab="tab-faq">FAQ</button>
+        <button class="admin-tab" data-tab="tab-feedback">फीडबैक</button>
+        <button class="admin-tab" data-tab="tab-visitors">आगंतुक सूची</button>
+        <button class="admin-tab" data-tab="tab-qr">QR कोड</button>
+      </div>
+
+      <div class="admin-panel-section active" id="tab-candidate">
+        <div class="admin-field"><label>उम्मीदवार का नाम</label><input id="f-cand-name" /></div>
+        <div class="admin-field"><label>पद</label><input id="f-cand-position" /></div>
+        <div class="admin-field"><label>उम्मीदवार फोटो का लिंक (URL)</label><input id="f-cand-photo-url" placeholder="https://..." /><img id="f-cand-photo-preview" class="thumb-preview" style="display:none;"></div>
+        <div class="admin-field"><label>चुनाव चिन्ह का नाम (यदि निर्वाचन आयोग द्वारा आवंटित हो)</label><input id="f-symbol-name" placeholder="केवल वास्तविक जानकारी भरें" /></div>
+        <div class="admin-field"><label>चुनाव चिन्ह फोटो का लिंक (URL)</label><input id="f-symbol-photo-url" placeholder="https://..." /><img id="f-symbol-photo-preview" class="thumb-preview" style="display:none;"></div>
+        <div class="admin-field"><label>महत्वपूर्ण तारीख/कार्यक्रम (केवल वास्तविक जानकारी)</label><input id="f-event-info" placeholder="जैसे: जनसभा — 12 अक्टूबर" /></div>
+        <div class="admin-field"><label>ग्राम पंचायत परिचय</label><textarea id="f-panchayat-intro" rows="3"></textarea></div>
+        <div class="admin-field"><label>महत्वपूर्ण जानकारी</label><textarea id="f-important-info" rows="3"></textarea></div>
+        <button class="admin-save-btn" id="save-candidate-btn">सहेजें</button>
+        <div class="admin-status" id="candidate-save-status"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-contact">
+        <div class="admin-field"><label>फोन नंबर</label><input id="f-phone" placeholder="केवल वास्तविक नंबर भरें" /></div>
+        <div class="admin-field"><label>Instagram लिंक</label><input id="f-insta" placeholder="https://instagram.com/..." /></div>
+        <div class="admin-field"><label>Facebook लिंक</label><input id="f-fb" placeholder="https://facebook.com/..." /></div>
+        <button class="admin-save-btn" id="save-contact-btn">सहेजें</button>
+        <div class="admin-status" id="contact-save-status"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-villages">
+        <div id="village-edit-list"></div>
+        <button class="admin-save-btn" id="save-villages-btn">सभी गाँव सहेजें</button>
+        <div class="admin-status" id="villages-save-status"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-media">
+        <div class="admin-field"><label>फोटो गैलरी — हर लाइन में एक फोटो का लिंक (URL)</label><textarea id="f-gallery" rows="4" placeholder="https://photo1.jpg&#10;https://photo2.jpg"></textarea></div>
+        <div class="admin-field"><label>YouTube वीडियो लिंक</label><input id="f-video" placeholder="https://youtube.com/watch?v=..." /></div>
+        <div class="admin-field"><label>घोषणा पत्र PDF लिंक</label><input id="f-manifesto" placeholder="https://...pdf" /></div>
+        <button class="admin-save-btn" id="save-media-btn">सहेजें</button>
+        <div class="admin-status" id="media-save-status"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-notices">
+        <div class="admin-field"><label>नई सूचना जोड़ें — तारीख</label><input id="f-notice-date" placeholder="जैसे: 12 अक्टूबर 2026" /></div>
+        <div class="admin-field"><label>सूचना का विवरण</label><textarea id="f-notice-text" rows="2"></textarea></div>
+        <button class="admin-save-btn" id="add-notice-btn">सूचना जोड़ें</button>
+        <div class="admin-status" id="notice-save-status"></div>
+        <div id="admin-notice-list" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-faq">
+        <div class="admin-field"><label>प्रश्न</label><input id="f-faq-q" /></div>
+        <div class="admin-field"><label>उत्तर</label><textarea id="f-faq-a" rows="2"></textarea></div>
+        <button class="admin-save-btn" id="add-faq-btn">जोड़ें</button>
+        <div class="admin-status" id="faq-save-status"></div>
+        <div id="admin-faq-list" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-feedback">
+        <p style="color:var(--ink-soft);font-size:.9rem;">आगंतुकों की राय व सुझाव</p>
+        <div id="admin-feedback-list"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-visitors">
+        <div class="admin-field"><input id="visitor-search-input" placeholder="नाम या गाँव से खोजें..." /></div>
+        <button class="mini-btn" id="export-csv-btn">📥 CSV डाउनलोड करें</button>
+        <div id="village-chart" style="margin-top:16px;"></div>
+        <table class="admin-table">
+          <thead><tr><th>नाम</th><th>गाँव</th><th>समय</th></tr></thead>
+          <tbody id="visitors-table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="admin-panel-section" id="tab-qr">
+        <p style="color:var(--ink-soft);font-size:.9rem;">इस वेबसाइट का QR कोड डाउनलोड करें</p>
+        <canvas id="qr-canvas-admin"></canvas><br/>
+        <button class="admin-save-btn" id="download-qr-btn">QR डाउनलोड करें</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import {
+  getFirestore, doc, getDoc, setDoc, collection, addDoc, deleteDoc,
+  serverTimestamp, onSnapshot, query, orderBy, limit, getCountFromServer
+} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import {
+  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
+} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCca_cvShk_9NUwq2pbSfomlxoxt279BSU",
+  authDomain: "friend-group-ca43a.firebaseapp.com",
+  databaseURL: "https://friend-group-ca43a-default-rtdb.firebaseio.com",
+  projectId: "friend-group-ca43a",
+  storageBucket: "friend-group-ca43a.firebasestorage.app",
+  messagingSenderId: "873156765363",
+  appId: "1:873156765363:web:f3f11528beedbc6fd472c6",
+  measurementId: "G-R7M1YH2SLZ"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+const VILLAGES = ["नयागांव", "बिशनपुरा", "कल्याणपुरा", "बेनपा", "गोपालपुरा"];
+const siteDocRef = doc(db, "site", "content");
+let siteData = {
+  candidateName: "गोपाल रेगर", candidatePosition: "सरपंच पद के उम्मीदवार",
+  candidatePhotoUrl: "", symbolName: "", symbolPhotoUrl: "", eventInfo: "",
+  panchayatIntro: "", importantInfo: "", phone: "", insta: "", fb: "",
+  galleryUrls: [], videoUrl: "", manifestoUrl: "", notices: [], faqs: [],
+  villages: {}
+};
+let firstSnapshotReceived = false;
+
+function placeholderIfEmpty(v){ return (v && v.trim().length) ? v : null; }
+
+// ---------- Toast ----------
+function showToast(msg){
+  const c = document.getElementById("toast-container");
+  const t = document.createElement("div");
+  t.className = "toast"; t.textContent = msg;
+  c.appendChild(t);
+  setTimeout(()=> t.remove(), 2500);
+}
+
+// ---------- Generic confirm ----------
+let confirmCallback = null;
+function askConfirm(message, onYes){
+  document.getElementById("confirm-message").textContent = message;
+  confirmCallback = onYes;
+  document.getElementById("confirm-overlay").classList.add("open");
+}
+document.getElementById("confirm-yes-btn").addEventListener("click", ()=>{
+  document.getElementById("confirm-overlay").classList.remove("open");
+  if(confirmCallback) confirmCallback();
+});
+document.getElementById("confirm-no-btn").addEventListener("click", ()=>{
+  document.getElementById("confirm-overlay").classList.remove("open");
+});
+
+// ---------- Offline banner ----------
+function updateOnlineStatus(){
+  document.getElementById("offline-banner").classList.toggle("show", !navigator.onLine);
+}
+window.addEventListener("online", updateOnlineStatus);
+window.addEventListener("offline", updateOnlineStatus);
+updateOnlineStatus();
+
+// ---------- Dark mode ----------
+function applyTheme(){
+  const t = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", t === "dark" ? "dark" : "");
+  const btn = document.getElementById("dark-toggle-btn");
+  if(btn) btn.textContent = t === "dark" ? "☀️" : "🌙";
+}
+applyTheme();
+document.getElementById("dark-toggle-btn").addEventListener("click", ()=>{
+  const cur = localStorage.getItem("theme") || "light";
+  localStorage.setItem("theme", cur === "dark" ? "light" : "dark");
+  applyTheme();
+});
+
+// ---------- Render public content ----------
+function renderPublicContent(){
+  if(placeholderIfEmpty(siteData.candidateName)) document.getElementById("candidate-name-hero").textContent = siteData.candidateName;
+  if(placeholderIfEmpty(siteData.candidatePosition)) document.getElementById("candidate-position-hero").textContent = siteData.candidatePosition;
+  if(placeholderIfEmpty(siteData.candidatePhotoUrl)) document.getElementById("candidate-photo").src = siteData.candidatePhotoUrl;
+
+  const introEl = document.getElementById("panchayat-intro-text");
+  introEl.textContent = placeholderIfEmpty(siteData.panchayatIntro) || "यह जानकारी जल्द जोड़ी जाएगी।";
+  introEl.className = placeholderIfEmpty(siteData.panchayatIntro) ? "" : "placeholder-text";
+
+  const impEl = document.getElementById("important-info-text");
+  impEl.textContent = placeholderIfEmpty(siteData.importantInfo) || "यह जानकारी जल्द जोड़ी जाएगी।";
+  impEl.className = placeholderIfEmpty(siteData.importantInfo) ? "" : "placeholder-text";
+
+  const eventEl = document.getElementById("event-badge");
+  if(placeholderIfEmpty(siteData.eventInfo)){ eventEl.textContent = "📅 " + siteData.eventInfo; eventEl.style.display = "inline-block"; }
+  else { eventEl.style.display = "none"; }
+
+  const phoneEl = document.getElementById("contact-phone");
+  if(placeholderIfEmpty(siteData.phone)){ phoneEl.textContent = siteData.phone; phoneEl.className=""; }
+  const instaEl = document.getElementById("contact-insta");
+  if(placeholderIfEmpty(siteData.insta)){ instaEl.innerHTML = `<a href="${siteData.insta}" target="_blank">Instagram</a>`; instaEl.className=""; }
+  const fbEl = document.getElementById("contact-fb");
+  if(placeholderIfEmpty(siteData.fb)){ fbEl.innerHTML = `<a href="${siteData.fb}" target="_blank">Facebook</a>`; fbEl.className=""; }
+
+  // gallery
+  const galEl = document.getElementById("gallery-grid");
+  const urls = (siteData.galleryUrls || []).filter(Boolean);
+  if(urls.length){ galEl.innerHTML = urls.map(u=>`<img src="${u}" loading="lazy" alt="फोटो गैलरी" />`).join(""); }
+  else { galEl.innerHTML = `<p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p>`; }
+
+  // video
+  const videoSection = document.getElementById("video-section");
+  if(placeholderIfEmpty(siteData.videoUrl)){
+    const embedUrl = toYoutubeEmbed(siteData.videoUrl);
+    document.getElementById("video-iframe").src = embedUrl;
+    videoSection.style.display = "block";
+  } else { videoSection.style.display = "none"; }
+
+  // manifesto
+  const manifestoSection = document.getElementById("manifesto-section");
+  if(placeholderIfEmpty(siteData.manifestoUrl)){
+    document.getElementById("manifesto-link").href = siteData.manifestoUrl;
+    manifestoSection.style.display = "block";
+  } else { manifestoSection.style.display = "none"; }
+
+  // notices
+  const noticeBoard = document.getElementById("notice-board");
+  const notices = siteData.notices || [];
+  if(notices.length){
+    noticeBoard.innerHTML = notices.slice().reverse().map(n=>`<div class="notice-item"><div class="n-date">${n.date||""}</div><div class="n-text">${n.text||""}</div></div>`).join("");
+  } else { noticeBoard.innerHTML = `<p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p>`; }
+
+  // faq
+  const faqList = document.getElementById("faq-list");
+  const faqs = siteData.faqs || [];
+  if(faqs.length){
+    faqList.innerHTML = faqs.map((f,i)=>`<div class="faq-item" data-i="${i}"><div class="faq-q">${f.q||""} <span>▾</span></div><div class="faq-a">${f.a||""}</div></div>`).join("");
+    faqList.querySelectorAll(".faq-item").forEach(item=>{
+      item.querySelector(".faq-q").addEventListener("click", ()=> item.classList.toggle("open"));
+    });
+  } else { faqList.innerHTML = `<p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p>`; }
+
+  renderVillageSpecific(getSelectedVillage() || VILLAGES[0]);
+  drawQr();
+  updateVisitorCount();
+}
+
+function toYoutubeEmbed(url){
+  try{
+    const idMatch = url.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{6,})/);
+    const id = idMatch ? idMatch[1] : "";
+    return id ? `https://www.youtube.com/embed/${id}` : url;
+  }catch(e){ return url; }
+}
+
+function renderVillageSpecific(villageName){
+  document.getElementById("village-info-heading").textContent = `${villageName} के लिए जानकारी`;
+  const vData = (siteData.villages && siteData.villages[villageName]) || {};
+  const infoEl = document.getElementById("village-info-text");
+  infoEl.textContent = placeholderIfEmpty(vData.info) || "यह जानकारी जल्द जोड़ी जाएगी।";
+  infoEl.className = placeholderIfEmpty(vData.info) ? "" : "placeholder-text";
+
+  const facGrid = document.getElementById("facility-grid");
+  facGrid.innerHTML = "";
+  const lines = (vData.facilities || "").split("\n").map(s=>s.trim()).filter(Boolean);
+  if(lines.length === 0){
+    facGrid.innerHTML = `<div class="info-card" style="grid-column:1/-1;"><p class="placeholder-text">यह जानकारी जल्द जोड़ी जाएगी।</p></div>`;
+  } else {
+    lines.forEach(line=>{
+      const card = document.createElement("div");
+      card.className = "facility-card";
+      card.innerHTML = `<div class="ic">•</div><p>${line}</p>`;
+      facGrid.appendChild(card);
+    });
+  }
+}
+
+onSnapshot(siteDocRef, (snap)=>{
+  if(snap.exists()){ siteData = { ...siteData, ...snap.data() }; }
+  firstSnapshotReceived = true;
+  document.getElementById("loading-spinner").style.display = "none";
+  renderPublicContent();
+  if(document.getElementById("admin-dash").style.display !== "none"){ fillAdminFormsFromSiteData(); }
+});
+setTimeout(()=>{ document.getElementById("loading-spinner").style.display = "none"; }, 4000);
+
+// ---------- Visitor counter ----------
+async function updateVisitorCount(){
+  try{
+    const snap = await getCountFromServer(collection(db, "visitors"));
+    document.getElementById("total-visitor-count").textContent = snap.data().count;
+  }catch(e){ document.getElementById("total-visitor-count").textContent = "—"; }
+}
+
+// ---------- QR code ----------
+function drawQr(){
+  const url = window.location.origin + window.location.pathname;
+  if(window.QRCode){
+    const c1 = document.getElementById("qr-canvas-public");
+    if(c1) QRCode.toCanvas(c1, url, { width: 160 }, ()=>{});
+    const c2 = document.getElementById("qr-canvas-admin");
+    if(c2) QRCode.toCanvas(c2, url, { width: 200 }, ()=>{});
+  }
+}
+document.getElementById("download-qr-btn")?.addEventListener("click", ()=>{
+  const c = document.getElementById("qr-canvas-admin");
+  const link = document.createElement("a");
+  link.download = "nayagaon-website-qr.png";
+  link.href = c.toDataURL();
+  link.click();
+});
+
+// ---------- Visitor / village state ----------
+function getVisitorName(){ return localStorage.getItem("visitorName") || ""; }
+function getSelectedVillage(){ return localStorage.getItem("selectedVillage") || ""; }
+
+function buildVillageGrid(container, onPick){
+  container.innerHTML = "";
+  VILLAGES.forEach(v=>{
+    const btn = document.createElement("button");
+    btn.className = "village-pick"; btn.textContent = v;
+    btn.addEventListener("click", ()=> onPick(v));
+    container.appendChild(btn);
+  });
+}
+
+const overlay = document.getElementById("welcome-overlay");
+const stepName = document.getElementById("step-name");
+const stepVillage = document.getElementById("step-village");
+const stepGreet = document.getElementById("step-greet");
+const nameInput = document.getElementById("visitor-name-input");
+const nameNextBtn = document.getElementById("name-next-btn");
+
+nameInput.addEventListener("input", ()=>{ nameNextBtn.disabled = nameInput.value.trim().length === 0; });
+nameNextBtn.addEventListener("click", ()=>{
+  const name = nameInput.value.trim();
+  if(!name) return;
+  localStorage.setItem("visitorName", name);
+  stepName.classList.remove("active");
+  stepVillage.classList.add("active");
+  buildVillageGrid(document.getElementById("village-grid-welcome"), (village)=>{
+    localStorage.setItem("selectedVillage", village);
+    logVisitor(name, village);
+    document.getElementById("greet-name").textContent = `नमस्कार, ${name} जी`;
+    document.getElementById("greet-village").textContent = `आपने ${village} चुना है।`;
+    stepVillage.classList.remove("active");
+    stepGreet.classList.add("active");
+  });
+});
+document.getElementById("enter-site-btn").addEventListener("click", ()=>{
+  overlay.style.display = "none";
+  showMainSite();
+});
+
+function logVisitor(name, village){
+  addDoc(collection(db, "visitors"), { name, village, createdAt: serverTimestamp() }).catch(()=>{});
+}
+
+function showMainSite(){
+  document.getElementById("main-site").style.display = "block";
+  document.getElementById("profile-name-text").textContent = getVisitorName() || "आगंतुक";
+  document.getElementById("avatar-letter").textContent = (getVisitorName() || "आ").charAt(0);
+  document.getElementById("profile-village-text").textContent = getSelectedVillage() || "—";
+  document.getElementById("hero-selected-village").textContent = getSelectedVillage() || VILLAGES[0];
+  document.getElementById("feedback-name").value = getVisitorName() || "";
+  buildVillageStrip();
+  renderPublicContent();
+  setupScrollReveal();
+}
+
+function buildVillageStrip(){
+  const strip = document.getElementById("village-strip");
+  strip.innerHTML = "";
+  VILLAGES.forEach(v=>{
+    const chip = document.createElement("button");
+    chip.className = "village-chip" + (v === getSelectedVillage() ? " active" : "");
+    chip.textContent = v; chip.dataset.village = v;
+    chip.addEventListener("click", ()=> selectVillage(v));
+    strip.appendChild(chip);
+  });
+}
+
+function selectVillage(village){
+  localStorage.setItem("selectedVillage", village);
+  document.getElementById("profile-village-text").textContent = village;
+  document.getElementById("hero-selected-village").textContent = village;
+  buildVillageStrip();
+  renderVillageSpecific(village);
+  const name = getVisitorName();
+  if(name) logVisitor(name, village);
+}
+
+const villageModal = document.getElementById("village-modal");
+function openVillageModal(){
+  buildVillageGrid(document.getElementById("village-grid-modal"), (v)=>{ selectVillage(v); villageModal.classList.remove("open"); });
+  villageModal.classList.add("open");
+}
+document.getElementById("change-village-btn-hero").addEventListener("click", openVillageModal);
+document.getElementById("badal-btn").addEventListener("click", openVillageModal);
+document.getElementById("floating-village-btn").addEventListener("click", openVillageModal);
+document.getElementById("village-modal-close").addEventListener("click", ()=> villageModal.classList.remove("open"));
+
+// ---------- WhatsApp share / print ----------
+document.getElementById("whatsapp-share-btn").addEventListener("click", ()=>{
+  const text = encodeURIComponent("गोपाल रेगर — सरपंच पद के उम्मीदवार, ग्राम पंचायत नयागांव। वेबसाइट देखें: " + window.location.href);
+  window.open(`https://wa.me/?text=${text}`, "_blank");
+});
+document.getElementById("print-btn").addEventListener("click", ()=> window.print());
+
+// ---------- Back to top / floating village visibility ----------
+window.addEventListener("scroll", ()=>{
+  const show = window.scrollY > 400;
+  document.getElementById("back-to-top").classList.toggle("show", show);
+  document.getElementById("floating-village-btn").classList.toggle("show", show);
+});
+document.getElementById("back-to-top").addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
+
+// ---------- Search ----------
+document.getElementById("site-search-input").addEventListener("input", (e)=>{
+  const q = e.target.value.trim();
+  document.querySelectorAll(".village-chip").forEach(chip=>{
+    chip.classList.toggle("hidden-search", q && !chip.dataset.village.includes(q));
+  });
+});
+
+// ---------- Feedback form ----------
+document.getElementById("feedback-submit-btn").addEventListener("click", async ()=>{
+  const name = document.getElementById("feedback-name").value.trim() || "अज्ञात";
+  const message = document.getElementById("feedback-message").value.trim();
+  const statusEl = document.getElementById("feedback-status");
+  if(!message){ statusEl.textContent = "कृपया संदेश लिखें।"; return; }
+  try{
+    await addDoc(collection(db, "feedback"), { name, message, createdAt: serverTimestamp() });
+    document.getElementById("feedback-message").value = "";
+    statusEl.textContent = "धन्यवाद! आपका सुझाव भेज दिया गया।";
+    showToast("सुझाव भेज दिया गया ✓");
+  }catch(e){ statusEl.textContent = "त्रुटि: भेजा नहीं जा सका।"; }
+});
+
+// ---------- Init ----------
+window.addEventListener("DOMContentLoaded", ()=>{
+  if(window.location.hash === "#admin"){
+    document.getElementById("admin-screen").classList.add("open");
+    document.getElementById("loading-spinner").style.display = "none";
+    overlay.style.display = "none";
+    return;
+  }
+  if(getVisitorName() && getSelectedVillage()){
+    overlay.style.display = "none";
+    showMainSite();
+  } else {
+    document.getElementById("loading-spinner").style.display = "none";
+  }
+});
+
+function setupScrollReveal(){
+  const items = document.querySelectorAll(".reveal");
+  const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("in"); }); }, { threshold: 0.15 });
+  items.forEach(i=>obs.observe(i));
+}
+
+// =====================================================================
+// ADMIN PANEL — Firebase Authentication only, no password ever stored
+// in this file. Create the admin user in Firebase Console → Authentication.
+// =====================================================================
+const adminLoginCard = document.getElementById("admin-login-card");
+const adminDash = document.getElementById("admin-dash");
+
+document.getElementById("admin-login-btn").addEventListener("click", async ()=>{
+  const email = document.getElementById("admin-email").value.trim();
+  const pass = document.getElementById("admin-password").value;
+  const errEl = document.getElementById("admin-login-error");
+  errEl.textContent = "";
+  try{ await signInWithEmailAndPassword(auth, email, pass); }
+  catch(e){ errEl.textContent = "लॉगिन विफल — ईमेल या पासवर्ड गलत है।"; }
+});
+document.getElementById("admin-logout-btn").addEventListener("click", ()=> signOut(auth));
+
+onAuthStateChanged(auth, (user)=>{
+  if(user){
+    adminLoginCard.style.display = "none";
+    adminDash.style.display = "block";
+    fillAdminFormsFromSiteData();
+    buildVisitorsTable();
+    buildFeedbackAdminList();
+    drawQr();
+  } else {
+    adminLoginCard.style.display = "block";
+    adminDash.style.display = "none";
+  }
+});
+
+document.querySelectorAll(".admin-tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".admin-tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".admin-panel-section").forEach(s=>s.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab).classList.add("active");
+  });
+});
+
+function fillAdminFormsFromSiteData(){
+  document.getElementById("f-cand-name").value = siteData.candidateName || "";
+  document.getElementById("f-cand-position").value = siteData.candidatePosition || "";
+  document.getElementById("f-cand-photo-url").value = siteData.candidatePhotoUrl || "";
+  document.getElementById("f-symbol-name").value = siteData.symbolName || "";
+  document.getElementById("f-symbol-photo-url").value = siteData.symbolPhotoUrl || "";
+  document.getElementById("f-event-info").value = siteData.eventInfo || "";
+  document.getElementById("f-panchayat-intro").value = siteData.panchayatIntro || "";
+  document.getElementById("f-important-info").value = siteData.importantInfo || "";
+  document.getElementById("f-phone").value = siteData.phone || "";
+  document.getElementById("f-insta").value = siteData.insta || "";
+  document.getElementById("f-fb").value = siteData.fb || "";
+  document.getElementById("f-gallery").value = (siteData.galleryUrls||[]).join("\n");
+  document.getElementById("f-video").value = siteData.videoUrl || "";
+  document.getElementById("f-manifesto").value = siteData.manifestoUrl || "";
+  if(siteData.candidatePhotoUrl){ const p=document.getElementById("f-cand-photo-preview"); p.src=siteData.candidatePhotoUrl; p.style.display="block"; }
+  if(siteData.symbolPhotoUrl){ const p=document.getElementById("f-symbol-photo-preview"); p.src=siteData.symbolPhotoUrl; p.style.display="block"; }
+  buildVillageEditForms();
+  buildAdminNoticeList();
+  buildAdminFaqList();
+}
+
+document.getElementById("save-candidate-btn").addEventListener("click", async ()=>{
+  const statusEl = document.getElementById("candidate-save-status");
+  statusEl.textContent = "सहेजा जा रहा है...";
+  try{
+    await setDoc(siteDocRef, {
+      candidateName: document.getElementById("f-cand-name").value.trim(),
+      candidatePosition: document.getElementById("f-cand-position").value.trim(),
+      candidatePhotoUrl: document.getElementById("f-cand-photo-url").value.trim(),
+      symbolName: document.getElementById("f-symbol-name").value.trim(),
+      symbolPhotoUrl: document.getElementById("f-symbol-photo-url").value.trim(),
+      eventInfo: document.getElementById("f-event-info").value.trim(),
+      panchayatIntro: document.getElementById("f-panchayat-intro").value.trim(),
+      importantInfo: document.getElementById("f-important-info").value.trim(),
+    }, { merge: true });
+    statusEl.textContent = "सहेज लिया गया ✓"; showToast("सहेज लिया गया ✓");
+  }catch(e){ statusEl.textContent = "त्रुटि: सहेजा नहीं जा सका।"; }
+});
+
+document.getElementById("save-contact-btn").addEventListener("click", async ()=>{
+  const statusEl = document.getElementById("contact-save-status");
+  statusEl.textContent = "सहेजा जा रहा है...";
+  try{
+    await setDoc(siteDocRef, {
+      phone: document.getElementById("f-phone").value.trim(),
+      insta: document.getElementById("f-insta").value.trim(),
+      fb: document.getElementById("f-fb").value.trim(),
+    }, { merge: true });
+    statusEl.textContent = "सहेज लिया गया ✓"; showToast("सहेज लिया गया ✓");
+  }catch(e){ statusEl.textContent = "त्रुटि: सहेजा नहीं जा सका।"; }
+});
+
+document.getElementById("save-media-btn").addEventListener("click", async ()=>{
+  const statusEl = document.getElementById("media-save-status");
+  statusEl.textContent = "सहेजा जा रहा है...";
+  try{
+    const galleryUrls = document.getElementById("f-gallery").value.split("\n").map(s=>s.trim()).filter(Boolean);
+    await setDoc(siteDocRef, {
+      galleryUrls,
+      videoUrl: document.getElementById("f-video").value.trim(),
+      manifestoUrl: document.getElementById("f-manifesto").value.trim(),
+    }, { merge: true });
+    statusEl.textContent = "सहेज लिया गया ✓"; showToast("सहेज लिया गया ✓");
+  }catch(e){ statusEl.textContent = "त्रुटि: सहेजा नहीं जा सका।"; }
+});
+
+function buildVillageEditForms(){
+  const list = document.getElementById("village-edit-list");
+  list.innerHTML = "";
+  VILLAGES.forEach(v=>{
+    const vData = (siteData.villages && siteData.villages[v]) || {};
+    const block = document.createElement("div");
+    block.className = "village-edit-block";
+    block.innerHTML = `<h4>${v}</h4>
+      <div class="admin-field"><label>गाँव के लिए जानकारी</label><textarea rows="2" data-village="${v}" data-field="info">${vData.info || ""}</textarea></div>
+      <div class="admin-field"><label>नागरिक सुविधाएँ (हर पंक्ति एक सुविधा)</label><textarea rows="2" data-village="${v}" data-field="facilities">${vData.facilities || ""}</textarea></div>`;
+    list.appendChild(block);
+  });
+}
+
+document.getElementById("save-villages-btn").addEventListener("click", async ()=>{
+  const statusEl = document.getElementById("villages-save-status");
+  statusEl.textContent = "सहेजा जा रहा है...";
+  const villagesUpdate = { ...(siteData.villages || {}) };
+  document.querySelectorAll("#village-edit-list textarea").forEach(ta=>{
+    const v = ta.dataset.village, field = ta.dataset.field;
+    villagesUpdate[v] = villagesUpdate[v] || {};
+    villagesUpdate[v][field] = ta.value.trim();
+  });
+  try{
+    await setDoc(siteDocRef, { villages: villagesUpdate }, { merge: true });
+    statusEl.textContent = "सहेज लिया गया ✓"; showToast("सहेज लिया गया ✓");
+  }catch(e){ statusEl.textContent = "त्रुटि: सहेजा नहीं जा सका।"; }
+});
+
+// ---------- Notices ----------
+document.getElementById("add-notice-btn").addEventListener("click", async ()=>{
+  const date = document.getElementById("f-notice-date").value.trim();
+  const text = document.getElementById("f-notice-text").value.trim();
+  const statusEl = document.getElementById("notice-save-status");
+  if(!text){ statusEl.textContent = "सूचना खाली नहीं हो सकती।"; return; }
+  const notices = [...(siteData.notices || []), { date, text }];
+  try{
+    await setDoc(siteDocRef, { notices }, { merge: true });
+    document.getElementById("f-notice-date").value = "";
+    document.getElementById("f-notice-text").value = "";
+    statusEl.textContent = "जोड़ दिया गया ✓"; showToast("सूचना जोड़ी गई ✓");
+  }catch(e){ statusEl.textContent = "त्रुटि: जोड़ा नहीं जा सका।"; }
+});
+
+function buildAdminNoticeList(){
+  const el = document.getElementById("admin-notice-list");
+  const notices = siteData.notices || [];
+  el.innerHTML = notices.map((n,i)=>`<div class="notice-item"><div class="n-date">${n.date||""}</div><div class="n-text">${n.text||""}</div><button class="mini-btn danger" data-i="${i}" style="margin-top:8px;">हटाएं</button></div>`).join("");
+  el.querySelectorAll("button").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const i = parseInt(btn.dataset.i);
+      askConfirm("क्या आप यह सूचना हटाना चाहते हैं?", async ()=>{
+        const updated = (siteData.notices||[]).filter((_,idx)=>idx!==i);
+        await setDoc(siteDocRef, { notices: updated }, { merge: true });
+        showToast("हटा दिया गया");
+      });
+    });
+  });
+}
+
+// ---------- FAQ ----------
+document.getElementById("add-faq-btn").addEventListener("click", async ()=>{
+  const q = document.getElementById("f-faq-q").value.trim();
+  const a = document.getElementById("f-faq-a").value.trim();
+  const statusEl = document.getElementById("faq-save-status");
+  if(!q || !a){ statusEl.textContent = "प्रश्न और उत्तर दोनों भरें।"; return; }
+  const faqs = [...(siteData.faqs || []), { q, a }];
+  try{
+    await setDoc(siteDocRef, { faqs }, { merge: true });
+    document.getElementById("f-faq-q").value = "";
+    document.getElementById("f-faq-a").value = "";
+    statusEl.textContent = "जोड़ दिया गया ✓"; showToast("FAQ जोड़ा गया ✓");
+  }catch(e){ statusEl.textContent = "त्रुटि: जोड़ा नहीं जा सका।"; }
+});
+
+function buildAdminFaqList(){
+  const el = document.getElementById("admin-faq-list");
+  const faqs = siteData.faqs || [];
+  el.innerHTML = faqs.map((f,i)=>`<div class="notice-item"><div class="n-text"><b>${f.q}</b></div><div class="n-text">${f.a}</div><button class="mini-btn danger" data-i="${i}" style="margin-top:8px;">हटाएं</button></div>`).join("");
+  el.querySelectorAll("button").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const i = parseInt(btn.dataset.i);
+      askConfirm("क्या आप यह प्रश्न हटाना चाहते हैं?", async ()=>{
+        const updated = (siteData.faqs||[]).filter((_,idx)=>idx!==i);
+        await setDoc(siteDocRef, { faqs: updated }, { merge: true });
+        showToast("हटा दिया गया");
+      });
+    });
+  });
+}
+
+// ---------- Feedback admin list ----------
+function buildFeedbackAdminList(){
+  const q = query(collection(db, "feedback"), orderBy("createdAt", "desc"), limit(100));
+  onSnapshot(q, (snap)=>{
+    const el = document.getElementById("admin-feedback-list");
+    el.innerHTML = "";
+    snap.forEach(docSnap=>{
+      const d = docSnap.data();
+      const time = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate().toLocaleString("hi-IN") : "—";
+      const div = document.createElement("div");
+      div.className = "notice-item";
+      div.innerHTML = `<div class="n-date">${d.name||"अज्ञात"} · ${time}</div><div class="n-text">${d.message||""}</div><button class="mini-btn danger" style="margin-top:8px;">हटाएं</button>`;
+      div.querySelector("button").addEventListener("click", ()=>{
+        askConfirm("क्या आप यह फीडबैक हटाना चाहते हैं?", async ()=>{
+          await deleteDoc(doc(db, "feedback", docSnap.id));
+          showToast("हटा दिया गया");
+        });
+      });
+      el.appendChild(div);
+    });
+  });
+}
+
+// ---------- Visitors table + search + CSV + chart ----------
+let visitorsCache = [];
+function buildVisitorsTable(){
+  const q = query(collection(db, "visitors"), orderBy("createdAt", "desc"), limit(500));
+  onSnapshot(q, (snap)=>{
+    visitorsCache = [];
+    snap.forEach(docSnap=>{
+      const d = docSnap.data();
+      visitorsCache.push({
+        name: d.name || "—", village: d.village || "—",
+        time: d.createdAt && d.createdAt.toDate ? d.createdAt.toDate().toLocaleString("hi-IN") : "—"
+      });
+    });
+    renderVisitorsTable(visitorsCache);
+    renderVillageChart(visitorsCache);
+  });
+}
+function renderVisitorsTable(list){
+  const body = document.getElementById("visitors-table-body");
+  body.innerHTML = list.map(v=>`<tr><td>${v.name}</td><td>${v.village}</td><td>${v.time}</td></tr>`).join("");
+}
+document.getElementById("visitor-search-input").addEventListener("input", (e)=>{
+  const q = e.target.value.trim().toLowerCase();
+  const filtered = visitorsCache.filter(v => v.name.toLowerCase().includes(q) || v.village.toLowerCase().includes(q));
+  renderVisitorsTable(filtered);
+});
+function renderVillageChart(list){
+  const counts = {};
+  VILLAGES.forEach(v=>counts[v]=0);
+  list.forEach(v=>{ if(counts[v.village] !== undefined) counts[v.village]++; });
+  const max = Math.max(1, ...Object.values(counts));
+  const el = document.getElementById("village-chart");
+  el.innerHTML = Object.entries(counts).map(([v,c])=>`
+    <div class="bar-row"><div class="bar-label">${v}</div><div class="bar-track"><div class="bar-fill" style="width:${(c/max*100)}%"></div></div><div class="bar-count">${c}</div></div>
+  `).join("");
+}
+document.getElementById("export-csv-btn").addEventListener("click", ()=>{
+  let csv = "नाम,गाँव,समय\n";
+  visitorsCache.forEach(v=>{ csv += `"${v.name}","${v.village}","${v.time}"\n`; });
+  const blob = new Blob(["\uFEFF"+csv], { type: "text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "visitors.csv";
+  link.click();
+});
+</script>
+</body>
+</html>
